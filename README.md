@@ -29,12 +29,20 @@ Using [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) f
 - [ ] Create Windows 10 recovery media: follow [this](https://www.dell.com/support/article/pt-br/sln297924/create-windows-10-recovery-media-for-your-dell-computer?lang=en) and [Imagem de recuperação Dell para Windows](https://www.dell.com/support/home/pt-br/drivers/osiso/WT64A)
 - [ ] Partition NVME Disk Windows [220gb] macOS [220gb] Linux [70gb]: follow [1 Disk + Winders/Loonix](https://hackintosh-multiboot.gitbook.io/hackintosh-multiboot/uefi/1-disk-+-winders-loonix) **OR** choose easier path [2 Disks: Windows + Data + macOS](https://hackintosh-multiboot.gitbook.io/hackintosh-multiboot/uefi/2-disks-windows-+-data-+-macos)
 - [ ] Install Arch Linux: follow [this](https://publications.petrzemek.net/articles/Dell-G5-15-Gaming-5590-Arch-Linux/)
-- [ ] Use [rEFInd](http://www.rodsbooks.com/refind/) to manage bootloader. Install [Minimalistic black rEFInd theme](https://github.com/andersfischernielsen/rEFInd-minimal-black)
+- [ ] Use [rEFInd](http://www.rodsbooks.com/refind/) to manage bootloader. Install [Minimalistic black rEFInd theme](https://github.com/andersfischernielsen/rEFInd-minimal-black) OR view [this guide](https://dortania.github.io/OpenCore-Desktop-Guide/extras/gui.html) and try to setup OpenCore with GUI
 - [ ] Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 - [x] Generate OpenCore Catalina 10.5.5 USB Installation
 - [ ] [An iDiot's Guide To Lilu and its Plug-ins](An iDiot's Guide To Lilu and its Plug-ins)
-- [ ] Copy EFI files to USB using [MountEFI](https://github.com/corpnewt/MountEFI)
+- [ ] Setup config.plist using [Coffee Lake Plus](https://dortania.github.io/vanilla-laptop-guide/OpenCore/config-laptop.plist/coffee-lake-plus.html)
+- [ ] Copy EFI files to USB using [MountEFI](https://github.com/corpnewt/MountEFI). Maybe need to compile [SSDT-XOSI](https://github.com/hackintosh-guides/vanilla-laptop-guide/tree/master/Misc-files/SSDT-XOSI.aml) instead of SSDT-GPI0 and/or **[SSDT-PMC](https://dortania.github.io/Getting-Started-With-ACPI/)** if things go wrong.
+  - [ ] **RebuildAppleMemoryMap** -> If panic, set to FALSE (Generates Memory Map compatible with macOS, can break on some laptop OEM firmwares so if you receive early boot failures disable this)
+  - [ ] PciRoot(0x0)/Pci(0x2,0x0) (didn't mess with whatevergreen in first iteration)
+  - [ ] **CustomSMBIOSGuid** if panic, set to YES, cause of relevance: Performs GUID patching for UpdateSMBIOSMode Custom mode. Usually relevant for Dell laptops
+  - [ ] **BootProtect** set to Bootstrap, search for the fix
+  - [ ] MacBookPro16,1 SMBIOS
+  - [ ] **UpdateSMBIOSMode** Replace the tables with newly allocated EfiReservedMemoryType, use Custom on Dell laptops requiring CustomSMBIOSGuid quirk
 - [ ] Remember to put -wegnoegpu NVRAM variable. Disable with [this](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/laptop-disable.html) method post installation.
+- [ ] Remember to put alcid=xxx NVRAM variable. Will be fixing [post install](https://dortania.github.io/vanilla-laptop-guide/post-install/)
 - [ ] Trackpad debug: follow [this](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/trackpad-methods/manual.html)
 - [ ] Backlight debug: follow [this](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/backlight-methods/manual.html)
 - [ ] Wi-Fi Intel 9560 alpha driver: follow [this comment](https://github.com/daliansky/XiaoMi-Pro-Hackintosh/issues/330#issuecomment-617738928)
@@ -99,5 +107,5 @@ Using [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) f
 - SSDT-PLUG.aml [SSDT-PLUG.dsl](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PLUG.dsl)
 - SSDT-PNLF-CFL.aml [SSDT-PNLF-CFL.dsl](https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/decompiled/SSDT-PNLF-CFL.dsl)
 
-All dsl files downloaded and compiled 07 07 2020.
+All dsl files downloaded and compiled 07 07 2020. 
 
