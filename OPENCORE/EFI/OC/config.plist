@@ -800,7 +800,7 @@
 			<key>HaltLevel</key>
 			<integer>2147483648</integer>
 			<key>ScanPolicy</key>
-			<integer>17760515</integer>
+			<integer>0</integer>
 			<key>Vault</key>
 			<string>Optional</string>
 		</dict>
@@ -906,7 +906,7 @@
 		<key>Generic</key>
 		<dict>
 			<key>AdviseWindows</key>
-			<false/>
+			<true/>
 			<key>MLB</key>
 			<string>M0000000000000001</string>
 			<key>ROM</key>
