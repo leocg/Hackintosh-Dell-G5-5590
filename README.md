@@ -37,10 +37,10 @@ Using [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) f
 - [ ] Copy EFI files to USB using [MountEFI](https://github.com/corpnewt/MountEFI). Maybe need to compile [SSDT-XOSI](https://github.com/hackintosh-guides/vanilla-laptop-guide/tree/master/Misc-files/SSDT-XOSI.aml) instead of SSDT-GPI0 and/or **[SSDT-PMC](https://dortania.github.io/Getting-Started-With-ACPI/)** if things go wrong.
   - [ ] **RebuildAppleMemoryMap** -> If panic, set to FALSE (Generates Memory Map compatible with macOS, can break on some laptop OEM firmwares so if you receive early boot failures disable this)
   - [ ] PciRoot(0x0)/Pci(0x2,0x0) (didn't mess with whatevergreen in first iteration)
-  - [ ] **CustomSMBIOSGuid** if panic, set to YES, cause of relevance: Performs GUID patching for UpdateSMBIOSMode Custom mode. Usually relevant for Dell laptops
+  - [x] **CustomSMBIOSGuid** Dell laptops = True
   - [ ] **BootProtect** set to Bootstrap, search for the fix
   - [ ] MacBookPro16,1 SMBIOS
-  - [ ] **UpdateSMBIOSMode** Replace the tables with newly allocated EfiReservedMemoryType, use Custom on Dell laptops requiring CustomSMBIOSGuid quirk
+  - [x] **UpdateSMBIOSMode** Dell = set to Custom
 - [ ] Remember to put -wegnoegpu NVRAM variable. Disable with [this](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/laptop-disable.html) method post installation.
 - [ ] Remember to put alcid=xxx NVRAM variable. Will be fixing [post install](https://dortania.github.io/vanilla-laptop-guide/post-install/)
 - [ ] Trackpad debug: follow [this](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/trackpad-methods/manual.html)
@@ -67,6 +67,7 @@ Using [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) f
 - [ ] Webcam
 - [ ] USB3 ports 
 - [ ] Card reader
+- [ ] Apple bootloader (OpenCanopy)
 
 ## TOOLS
 
