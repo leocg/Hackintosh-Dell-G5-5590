@@ -25,7 +25,21 @@ Using [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) f
 
 ## INSTALLATION
 
-**WIP**
+- [ ] Upgrade Windows 10 from Home to Pro
+- [ ] Create Windows 10 recovery media: follow [this](https://www.dell.com/support/article/pt-br/sln297924/create-windows-10-recovery-media-for-your-dell-computer?lang=en) and [Imagem de recuperação Dell para Windows](https://www.dell.com/support/home/pt-br/drivers/osiso/WT64A)
+- [ ] Partition NVME Disk Windows [220gb] macOS [220gb] Linux [70gb]: follow [1 Disk + Winders/Loonix](https://hackintosh-multiboot.gitbook.io/hackintosh-multiboot/uefi/1-disk-+-winders-loonix) **OR** choose easier path [2 Disks: Windows + Data + macOS](https://hackintosh-multiboot.gitbook.io/hackintosh-multiboot/uefi/2-disks-windows-+-data-+-macos)
+- [ ] Install Arch Linux: follow [this](https://publications.petrzemek.net/articles/Dell-G5-15-Gaming-5590-Arch-Linux/)
+- [ ] Use [rEFInd](http://www.rodsbooks.com/refind/) to manage bootloader. Install [Minimalistic black rEFInd theme](https://github.com/andersfischernielsen/rEFInd-minimal-black)
+- [ ] Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
+- [x] Generate OpenCore Catalina 10.5.5 USB Installation
+- [ ] [An iDiot's Guide To Lilu and its Plug-ins](An iDiot's Guide To Lilu and its Plug-ins)
+- [ ] Copy EFI files to USB using [MountEFI](https://github.com/corpnewt/MountEFI)
+- [ ] Remember to put -wegnoegpu NVRAM variable. Disable with [this](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/laptop-disable.html) method post installation.
+- [ ] Trackpad debug: follow [this](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/trackpad-methods/manual.html)
+- [ ] Backlight debug: follow [this](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/backlight-methods/manual.html)
+- [ ] Wi-Fi Intel 9560 alpha driver: follow [this comment](https://github.com/daliansky/XiaoMi-Pro-Hackintosh/issues/330#issuecomment-617738928)
+- [ ] Share Bluetooth pairing between windows and mac: follow [this](https://www.reddit.com/r/hackintosh/comments/hjwu43/howto_share_a_bluetooth_pairing_headphones_etc/)
+- [ ] Thunderbolt 3 Video out fix: follow [this](https://www.tonymacx86.com/threads/dell-g5-5590-thunderbolt-display-need-help.293776/)
 
 ## WORKING / NOT WORKING
 
