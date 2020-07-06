@@ -5,17 +5,16 @@
 ### Dell G5 5590 a80p 
 
 Processor: Core i7-9750H 6C/12T (Coffee Lake Plus / Coffee Lake Refresh) 
-iGPU: Intel UHD 630 Graphics  
-~~dGPU: nVidia GeForce RTX 2060~~  
+iGPU: Intel UHD 630 Graphics (Video Out using a **USB Type-C to DisplayPort adapter** into the USB 3.1 Gen 2 Type-C/DisplayPort 1.2/Thunderbolt 3 port)  
+~~dGPU: nVidia GeForce RTX 2060~~ ~~(HDMI 2.0b port /mini DisplayPort 1.4)~~  
 Display: 15.6 1080p (1920x1080) 144hz  
 Memory: 16GB DDR4 2666MHz (8GBx2)  
 Storage: 512GB Intel NVMe SSD + 1tb SSD (Crucial BX500)  
-Intel Wifi/Bluetooth  
-Killer Gigabit LAN  
-~~Fingerprint Sensor~~  
+Audio: Realtek ALC3204-CG with support for nahimic  
+Wifi/Bluetooth: Intel 9560 2x2 ac (80 MHz) (Wi-Fi 5 / Blueooth 5)  
+Ethernet: Killer GB E2500V2 10/100/1000 Mbps  
 USB 3.1  
-Thunderbolt  
-Realtek Audio  
+Thunderbolt    
 Webcam + Microphone  
 
 ## About
@@ -28,12 +27,32 @@ Using [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) f
 
 **WIP**
 
+## WORKING / NOT WORKING
+
+- [ ] iGPU Acceleration 
+- [ ] Backlight 
+- [ ] 144hz display 
+- [ ] Thunderbolt 3 video out 
+- [ ] Ethernet
+- [ ] Bluetooth
+- [ ] Wi-Fi
+- [ ] Apple Services
+- [ ] Keyboard
+- [ ] Keyboard backlight
+- [ ] Trackpad
+- [ ] Audio
+- [ ] Microphone
+- [ ] Webcam
+- [ ] USB3 ports 
+- [ ] Card reader
+
 ## TOOLS
 
 - [OpenCore 0.5.9](https://github.com/acidanthera/OpenCorePkg)
 - [gibMacOS](https://github.com/corpnewt/gibMacOS) - Download macOS vanilla install
 - [MountEFI](https://github.com/corpnewt/MountEFI) - Mount EFI partitions
 - [ProperTree](https://github.com/corpnewt/ProperTree) - Generate config.plist based on OC folder
+- [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) - Generate Mac serials
 
 ## File History
 
