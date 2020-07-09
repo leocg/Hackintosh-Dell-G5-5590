@@ -25,7 +25,7 @@ Using [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) f
 
 ## INSTALLATION
 
-Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) and use MacBookPro16,1 SMBIOS. Setup config.plist using [Coffee Lake Plus](https://dortania.github.io/vanilla-laptop-guide/OpenCore/config-laptop.plist/coffee-lake-plus.html)
+Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) and use MacBookPro16,1 SMBIOS (remember to insert your generated info at platform info section). Setup config.plist using [Coffee Lake Plus](https://dortania.github.io/vanilla-laptop-guide/OpenCore/config-laptop.plist/coffee-lake-plus.html)
 
 **ACPI changes:**
 
@@ -37,6 +37,10 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 - UpdateSMBIOSMode = Custom
 - CustomSMBIOSGuid = True
 - Audio layout-id = 15 
+
+**Tweaks**
+
+- At first kernel_task was using 100% CPU. The issue resolved when turned on Thunderbolt3 in BIOS settings. Need to activate thunderbolt in macOS, no drivers detected at system profiler.
 
 ## Future reading
 
@@ -55,10 +59,11 @@ Some features need improvement. I'm buying an m2 wifi/bluetooth airport adapter 
 - [ ] Thunderbolt 3 video out (Don't have a Thunderbolt->DisplayPort adapter yet)
 - [ ] Ethernet
 - [x] Bluetooth
+- [ ] Apple Communications (Continuity, airdrop, airplay, etc)
 - [ ] Wi-Fi
-- [ ] Apple Services
+- [x] Apple Services
 - [x] Keyboard
-- [x] Keyboard backlight
+- [x] Keyboard backlight (RGB backlight works, but had to setup at Windows 10 Alienware Command Center. When boot at macOS the config remais, including color. Maybe it's defined at NVRAM, will study this at the future. Cannot turn off keyboard backlight in macOS for now. Continuous usage of macOS reboot keyboard backlight to factory color, bluish green)
 - [x] Trackpad
 - [x] Audio
 - [x] Microphone
@@ -76,6 +81,10 @@ Some features need improvement. I'm buying an m2 wifi/bluetooth airport adapter 
 - [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) - Generate Mac serials
 
 ## File History
+
+**July 09 2020** (v2)
+
+Fake ethernet to make iCloud work, fixed battery status.
 
 **July 09 2020**
 
