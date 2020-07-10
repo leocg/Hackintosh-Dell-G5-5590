@@ -11,7 +11,7 @@ Display: 15.6 1080p (1920x1080) 144hz
 Memory: 16GB DDR4 2666MHz (8GBx2)  
 Storage: 512GB Intel NVMe SSD + 1tb SSD (Crucial BX500)  
 Audio: Realtek ALC3204-CG  
-~~Wifi/Bluetooth: Qualcomm QCA61x4A (DW1820)~~ 
+Wifi/Bluetooth: ~~Qualcomm QCA61x4A (DW1820)~~ Fenvi BCM94360NG (waiting for arrival)  
 Ethernet: Killer GB E2500V2 10/100/1000 Mbps  
 USB 3.1  
 Thunderbolt    
@@ -29,7 +29,7 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 
 **ACPI changes:**
 
-- SSNC-PLUG - CPU0 into PP00 -> Processor ID on G5 is pp00
+- SSNC-PLUG - CPU0 into PP00 -> Processor ID on Dell G5 5590 is PP00
 
 **DELL SPECIFICS config.plist:**
 
@@ -42,9 +42,19 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 
 - At first kernel_task was using 100% CPU. The issue resolved when turned on Thunderbolt3 in BIOS settings. Need to activate thunderbolt in macOS, no drivers detected at system profiler.
 
+## TODO
+
+- Fix trackpad not working after sleep
+- Fix USB3 ports not delivering more power than 500. Only Thunderbolt3/USB-C port delivers full power.
+- SSD sometimes get very slow write speed. Looking for a fix (or maybe migrate macOS installation to NVME)
+- Install Fenvi BCM94360NG Wi-Fi/Bluetooth card (waiting for arrival, using TP Link USB dongle for now)
+- Review CPU frequencies. Right now minimum is 1.2ghz and maximum seems to be 4.0ghz
+- Fix backlight keyboard control (only working via Settings -> Display)
+- Quicktime and iTunes show artifacts while full screen. IINA runs fine, tested mp4, mkv and ts movies, maybe something to do with Apple decoding
+
 ## Future reading
 
-Some features need improvement. I'm buying an m2 wifi/bluetooth airport adapter to unlock remaining features.
+Some features need improvement. I'm waiting for Fenvi BCM94360NG airport adapter to unlock remaining features.
 
 - [ ] Backlight debug: follow [this](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/backlight-methods/manual.html)
 - [ ] Share Bluetooth pairing between windows and mac: follow [this](https://www.reddit.com/r/hackintosh/comments/hjwu43/howto_share_a_bluetooth_pairing_headphones_etc/) (optional)
@@ -63,7 +73,7 @@ Some features need improvement. I'm buying an m2 wifi/bluetooth airport adapter 
 - [ ] Wi-Fi
 - [x] Apple Services
 - [x] Keyboard
-- [x] Keyboard backlight (RGB backlight works, but had to setup at Windows 10 Alienware Command Center. When boot at macOS the config remais, including color. Maybe it's defined at NVRAM, will study this at the future. Cannot turn off keyboard backlight in macOS for now. Continuous usage of macOS reboot keyboard backlight to factory color, bluish green)
+- [x] Keyboard backlight (RGB backlight works, but had to setup at Windows 10 Alienware Command Center. When boot at macOS the config remais, including color. Cannot turn off keyboard backlight in macOS for now. I found some information regarding sending information via USB to keyboard backlight, looking for a solution to inject colors)
 - [x] Trackpad
 - [x] Audio
 - [x] Microphone
