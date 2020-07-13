@@ -1,0 +1,19 @@
+
+
+One Of: CFG Lock, VarStoreInfo (VarOffset/VarName): 0x5C4, VarStore: 0x1, QuestionId: 0x361, Size: 1, Min: 0x0, Max 0x1, Step: 0x0 {05 91 98 03 99 03 61 03 01 00 C4 05 10 10 00 01 00}
+	One Of Option: Disabled, Value (8 bit): 0x0 {09 07 04 00 00 00 00}
+	One Of Option: Enabled, Value (8 bit): 0x1 (default) {09 07 03 00 30 00 01}
+End One Of {29 02}
+
+			setup_var_3 0x5C4 0x00
+
+
+
+One Of: Overclocking Lock, VarStoreInfo (VarOffset/VarName): 0x660, VarStore: 0x1, QuestionId: 0x362, Size: 1, Min: 0x0, Max 0x1, Step: 0x0 {05 91 94 03 95 03 62 03 01 00 60 06 10 10 00 01 00}
+	One Of Option: Disabled, Value (8 bit): 0x0 {09 07 04 00 00 00 00}
+	One Of Option: Enabled, Value (8 bit): 0x1 (default) {09 07 03 00 30 00 01}
+End One Of {29 02}
+
+			setup_var_3 0x660 0x00
+
+

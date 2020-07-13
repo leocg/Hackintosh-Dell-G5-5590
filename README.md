@@ -38,18 +38,25 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 - CustomSMBIOSGuid = True
 - Audio layout-id = 15 
 
-**Tweaks**
+**Patching CFG Lock**
 
-- At first kernel_task was using 100% CPU. The issue resolved when turned on Thunderbolt3 in BIOS settings. Need to activate thunderbolt in macOS, no drivers detected at system profiler.
+- Download BIOS from Dell website (version must be the same, variable can change after updates). 
+- Dump bios with DecompNewDell.py (used Python3)
+- Open dumped bios with UEFITool
+- Search for CFG Lock, VarStoreInfo (VarOffset/VarName). Variable name come just after (in my case, using BIOS 1.13.2, was 0x5C4)
+
+`One Of: CFG Lock, VarStoreInfo (VarOffset/VarName): 0x5C4, VarStore: 0x1, QuestionId: 0x361, Size: 1, Min: 0x0, Max 0x1, Step: 0x0 {05 91 98 03 99 03 61 03 01 00 C4 05 10 10 00 01 00}`
+	`One Of Option: Disabled, Value (8 bit): 0x0 {09 07 04 00 00 00 00}`
+	`One Of Option: Enabled, Value (8 bit): 0x1 (default) {09 07 03 00 30 00 01}`
+`End One Of {29 02}`
+
+- Prepare EFI Boot Disk using [Disabling CFG Lock](https://dortania.github.io/OpenCore-Desktop-Guide/extras/msr-lock#disabling-cfg-lock) instructions and patch using **setup_var_3 0x5C4 0x00**
 
 ## TODO
 
-- Fix trackpad not working after sleep
 - Fix USB3 ports not delivering more power than 500. Only Thunderbolt3/USB-C port delivers full power.
-- SSD sometimes get very slow write speed. Looking for a fix (or maybe migrate macOS installation to NVME)
 - Install Fenvi BCM94360NG Wi-Fi/Bluetooth card (waiting for arrival, using TP Link USB dongle for now)
 - Review CPU frequencies. Right now minimum is 1.2ghz and maximum seems to be 4.0ghz
-- Fix backlight keyboard control (only working via Settings -> Display)
 - Quicktime and iTunes show artifacts while full screen. IINA runs fine, tested mp4, mkv and ts movies, maybe something to do with Apple decoding
 
 ## Future reading
@@ -79,7 +86,7 @@ Some features need improvement. I'm waiting for Fenvi BCM94360NG airport adapter
 - [x] Microphone
 - [x] Webcam
 - [x] USB3 ports 
-- [ ] Card reader
+- [x] Card reader
 - [x] Apple bootloader (OpenCanopy)
 
 ## TOOLS
@@ -91,6 +98,10 @@ Some features need improvement. I'm waiting for Fenvi BCM94360NG airport adapter
 - [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) - Generate Mac serials
 
 ## File History
+
+**July 13 2020** (v3)
+
+Fixed trackpad issues. Preparing machine for disabling CFG Lock and USB Mapping
 
 **July 09 2020** (v2)
 

@@ -1,0 +1,5 @@
+VendorName=Dell Inc.
+OemString=Model_File
+SystemName=G5 5590/G7 7590/G7 7790
+Version=1.13.2
+Model=08EA,08EB,08EC,08ED,08EE,08EF
