@@ -21,6 +21,10 @@ Webcam + Microphone
 
 This is my "Hackintosh Diary", will be using it to maintain a triple boot Dell G5 5590 a80p between macOS, Arch Linux and Windows.  
 
+Don't directly use my EFI folder, your computer won't boot cause it has CFG Lock disabled and other post install stuff.
+
+Vanilla Boot could be accomplished using SAFE BOOT EFI folder.
+
 Using [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) from [Dortania](https://dortania.github.io/)
 
 ## INSTALLATION
@@ -51,6 +55,8 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 `End One Of {29 02}`
 
 - Prepare EFI Boot Disk using [Disabling CFG Lock](https://dortania.github.io/OpenCore-Desktop-Guide/extras/msr-lock#disabling-cfg-lock) instructions and patch using **setup_var_3 0x5C4 0x00**
+- After applying patch chech in Hackintool -> Utilities -> GetAppleIntelInfo
+- Inside IA32_MISC_ENABLES  (0x1A0) : 0x850089: **CFG Lock  : 0 (MSR not locked)**
 
 ## TODO
 
@@ -87,7 +93,8 @@ Some features need improvement. I'm waiting for Fenvi BCM94360NG airport adapter
 - [x] Webcam
 - [x] USB3 ports 
 - [x] Card reader
-- [x] Apple bootloader (OpenCanopy)
+- [ ] Apple bootloader (OpenCanopy) - **Removed until it gets more stable, sometimes it boots slow and I can't select any partition other than default**
+- [x] CFG Lock disabled
 
 ## TOOLS
 
@@ -99,9 +106,13 @@ Some features need improvement. I'm waiting for Fenvi BCM94360NG airport adapter
 
 ## File History
 
+**July 13 2020** (v4)
+
+CFG Lock disabled in bios and removed Quirks from config.plist
+
 **July 13 2020** (v3)
 
-Fixed trackpad issues. Preparing machine for disabling CFG Lock and USB Mapping
+Fixed trackpad issues. Preparing machine for disabling CFG Lock and USB Mapping. 
 
 **July 09 2020** (v2)
 
