@@ -62,7 +62,8 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 
 - Fix USB3 ports not delivering more power than 500. Only Thunderbolt3/USB-C port delivers full power.
 - Install Fenvi BCM94360NG Wi-Fi/Bluetooth card (waiting for arrival, using TP Link USB dongle for now)
-- Review CPU frequencies. Right now minimum is 1.2ghz and maximum seems to be 4.0ghz
+- Review CPU frequencies. Right now minimum is 1.2ghz and maximum 4.0ghz
+- Remap brightness to F11 and F12 (currently Fn+S Fn+B)
 - Quicktime and iTunes show artifacts while full screen. IINA runs fine, tested mp4, mkv and ts movies, maybe something to do with Apple decoding
 
 ## Future reading
@@ -95,6 +96,7 @@ Some features need improvement. I'm waiting for Fenvi BCM94360NG airport adapter
 - [x] Card reader
 - [ ] Apple bootloader (OpenCanopy) - **Removed until it gets more stable, sometimes it boots slow and I can't select any partition other than default**
 - [x] CFG Lock disabled
+- [x] NVRAM - Verified using [this](https://dortania.github.io/OpenCore-Desktop-Guide/post-install/nvram.html#verifying-if-you-have-working-nvram) method
 
 ## TOOLS
 
@@ -105,6 +107,15 @@ Some features need improvement. I'm waiting for Fenvi BCM94360NG airport adapter
 - [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) - Generate Mac serials
 
 ## File History
+
+
+
+**July 14 2020** (v5)
+
+- Disabled dGPU using [Optimus Method](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/laptop-disable.html#optimus-method)
+- Fixed double call for VoodooInput
+- Removed SSDT-AWAC, DSDT already had variable and errors were shown on boot
+- Removed -wegnoegpu in order to utilize Optimus Method. Battery life up from 50m to 3h. Still looking for more tweaks, but it's already better than Windows 10 Pro (2h40 estimated)
 
 **July 13 2020** (v4)
 
@@ -145,7 +156,7 @@ First version fast and functional. AML files fixed to match notebook specs. Stil
 
 ### ACPI
 
-- SSDT-AWAC.aml [SSDT-PNLF-CFL.dsl](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-AWAC.dsl)
+- ~~SSDT-AWAC.aml~~
 - SSDT-EC-USBX.aml [SSDT-EC-USBX.dsl](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-EC-USBX.dsl)
 - SSDT-GPI0.aml [SSDT-GPI0.dsl](https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/decompiled/SSDT-GPI0.dsl)
 - SSDT-PLUG.aml [SSDT-PLUG.dsl](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PLUG.dsl)
