@@ -60,7 +60,7 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 
 ## TODO
 
-- Fix USB3 ports not delivering more power than 500. Only Thunderbolt3/USB-C port delivers full power.
+- Proper port mapping - Fix USB3 ports not delivering more power than 500. Only Thunderbolt3/USB-C port delivers full power.
 - Install Fenvi BCM94360NG Wi-Fi/Bluetooth card (waiting for arrival, using TP Link USB dongle for now)
 - Review CPU frequencies. Right now minimum is 1.2ghz and maximum 4.0ghz
 - Remap brightness to F11 and F12 (currently Fn+S Fn+B)
@@ -108,14 +108,13 @@ Some features need improvement. I'm waiting for Fenvi BCM94360NG airport adapter
 
 ## File History
 
-
-
 **July 14 2020** (v5)
 
 - Disabled dGPU using [Optimus Method](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/laptop-disable.html#optimus-method)
 - Fixed double call for VoodooInput
 - Removed SSDT-AWAC, DSDT already had variable and errors were shown on boot
-- Removed -wegnoegpu in order to utilize Optimus Method. Battery life up from 50m to 3h. Still looking for more tweaks, but it's already better than Windows 10 Pro (2h40 estimated)
+- Removed -wegnoegpu in order to utilize Optimus Method. Battery life up from 50m to 3h.
+- Removed NVMeFix.kext. Trying to run as vanilla as possible.
 
 **July 13 2020** (v4)
 
