@@ -23,9 +23,15 @@ This is my "Hackintosh Diary", will be using it to maintain a triple boot Dell G
 
 Don't directly use my EFI folder, your computer won't boot cause it has CFG Lock disabled and other post install stuff.
 
-Vanilla Boot could be accomplished using SAFE BOOT EFI folder.
+Vanilla Boot could be accomplished using OPENCORE USB BOOT folder.
 
 Using [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) from [Dortania](https://dortania.github.io/)
+
+Most work is done post installation, be prepared to read a lot. CFG Lock is difficult to understand but very simple to execute. Disabling CFG Lock and dGPU using [Optimus Method](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/laptop-disable.html#optimus-method) has major impact on battery life.
+
+I'm investigating some issues with freeze when plugging in and out more than once and quickly and some kernel panic using Intel Power Gadget.
+
+Bought this laptop to replace my MacBook Pro 2011 17". So far is great! Using primary for web development.
 
 ## INSTALLATION
 
@@ -62,29 +68,16 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 
 - Proper port mapping - Fix USB3 ports not delivering more power than 500. Only Thunderbolt3/USB-C port delivers full power.
 - Install Fenvi BCM94360NG Wi-Fi/Bluetooth card (waiting for arrival, using TP Link USB dongle for now)
-- Review CPU frequencies. Right now minimum is 1.2ghz and maximum 4.0ghz
-- Remap brightness to F11 and F12 (currently Fn+S Fn+B)
-- Quicktime and iTunes show artifacts while full screen. IINA runs fine, tested mp4, mkv and ts movies, maybe something to do with Apple decoding
-
-## Future reading
-
-Some features need improvement. I'm waiting for Fenvi BCM94360NG airport adapter to unlock remaining features.
-
-- [ ] Backlight debug: follow [this](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/backlight-methods/manual.html)
-- [ ] Share Bluetooth pairing between windows and mac: follow [this](https://www.reddit.com/r/hackintosh/comments/hjwu43/howto_share_a_bluetooth_pairing_headphones_etc/) (optional)
-- [ ] Thunderbolt 3 Video out fix: follow [this](https://www.tonymacx86.com/threads/dell-g5-5590-thunderbolt-display-need-help.293776/)
-- [ ] Follow [vanilla laptop guide post install](https://dortania.github.io/vanilla-laptop-guide/post-install/) to fix possible issues
+- ~~Review CPU frequencies.~~
+- ~~Remap brightness to F11 and F12 (currently Fn+S Fn+B)~~ 
+- Quicktime and iTunes show artifacts while full screen. IINA runs fine, tested .mp4, .mkv and .ts movies
 
 ## WORKING / NOT WORKING
 
 - [x] iGPU Acceleration 
 - [x] Backlight 
 - [x] 144hz display 
-- [ ] Thunderbolt 3 video out (Don't have a Thunderbolt->DisplayPort adapter yet)
-- [ ] Ethernet
 - [x] Bluetooth
-- [ ] Apple Communications (Continuity, airdrop, airplay, etc)
-- [ ] Wi-Fi
 - [x] Apple Services
 - [x] Keyboard
 - [x] Keyboard backlight (RGB backlight works, but had to setup at Windows 10 Alienware Command Center. When boot at macOS the config remais, including color. Cannot turn off keyboard backlight in macOS for now. I found some information regarding sending information via USB to keyboard backlight, looking for a solution to inject colors)
@@ -94,9 +87,20 @@ Some features need improvement. I'm waiting for Fenvi BCM94360NG airport adapter
 - [x] Webcam
 - [x] USB3 ports 
 - [x] Card reader
-- [ ] Apple bootloader (OpenCanopy) - **Removed until it gets more stable, sometimes it boots slow and I can't select any partition other than default**
 - [x] CFG Lock disabled
 - [x] NVRAM - Verified using [this](https://dortania.github.io/OpenCore-Desktop-Guide/post-install/nvram.html#verifying-if-you-have-working-nvram) method
+- [x] Apple bootloader (OpenCanopy) - **Removed until it gets more stable, sometimes it boots slow and I can't select any partition other than default**
+- [ ] Thunderbolt 3 video out (Don't have a Thunderbolt->DisplayPort adapter yet)
+- [ ] Ethernet (no drivers yet for Killer GB E2500V2)
+- [ ] Apple Communications (Continuity, airdrop, airplay, etc) - Waiting for Airport Card
+- [ ] Wi-Fi - Waiting for Airport Card
+
+## Future reading
+
+Some features need improvement. I'm waiting for Fenvi BCM94360NG airport adapter to unlock remaining features.
+
+- [ ] Share Bluetooth pairing between windows and mac: follow [this](https://www.reddit.com/r/hackintosh/comments/hjwu43/howto_share_a_bluetooth_pairing_headphones_etc/)
+- [ ] Thunderbolt 3 Video out fix: follow [this](https://www.tonymacx86.com/threads/dell-g5-5590-thunderbolt-display-need-help.293776/)
 
 ## TOOLS
 
@@ -108,23 +112,27 @@ Some features need improvement. I'm waiting for Fenvi BCM94360NG airport adapter
 
 ## File History
 
-**July 14 2020** (v5)
+**July 14 2020** (v1.0) - STABLE
 
 - Disabled dGPU using [Optimus Method](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/laptop-disable.html#optimus-method)
 - Fixed double call for VoodooInput
 - Removed SSDT-AWAC, DSDT already had variable and errors were shown on boot
 - Removed -wegnoegpu in order to utilize Optimus Method. Battery life up from 50m to 3h.
 - Removed NVMeFix.kext. Trying to run as vanilla as possible.
+- Remapped all FN keys using Karabiner Elements
+- Testing different CPU Friend configs. So far the Vanilla one is the best option
+- Removed -v argument and disable all OpenCore debug tools
+- Linked Windows bootloader cause already lost windows EFI twice during hackintosh tweaks.
 
-**July 13 2020** (v4)
+**July 13 2020** (v0.4)
 
 CFG Lock disabled in bios and removed Quirks from config.plist
 
-**July 13 2020** (v3)
+**July 13 2020** (v0.3)
 
 Fixed trackpad issues. Preparing machine for disabling CFG Lock and USB Mapping. 
 
-**July 09 2020** (v2)
+**July 09 2020** (v0.2)
 
 Fake ethernet to make iCloud work, fixed battery status.
 

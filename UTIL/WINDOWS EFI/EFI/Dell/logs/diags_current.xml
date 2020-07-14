@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <SupportAssistPrebootDiagnosticLog>
+    <Schema>1.0.0</Schema>
+    <LogNumber>14</LogNumber>
+    <LogTimeStamp>07/14/2020 03:17:30</LogTimeStamp>
+    <ePSA_Data>
+      <Result>Abort</Result>
+      <ReturnCode>BOOT_SHUTDOWN</ReturnCode>
+      <DevicesTested>Memory, Hard Drive</DevicesTested>
+      <ePSAFullVersion>4306.26</ePSAFullVersion>
+      <ePSAInvocationCount>6</ePSAInvocationCount>
+    </ePSA_Data>
+    <BIOS_Data>
+      <ErrorCategory>NO_BOOT</ErrorCategory>
+      <ErrorMessage><![CDATA[No bootable devices found.
+]]></ErrorMessage>
+      <SOS_Available>FALSE</SOS_Available>
+      <TimeOutSeconds>0</TimeOutSeconds>
+    </BIOS_Data>
+  </SupportAssistPrebootDiagnosticLog>
