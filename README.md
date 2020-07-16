@@ -35,25 +35,25 @@ Bought this laptop to replace my MacBook Pro 2011 17". So far is great! Using pr
 
 ## INSTALLATION
 
-Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) and use MacBookPro16,1 SMBIOS (remember to insert your generated info at platform info section). Setup config.plist using [Coffee Lake Plus](https://dortania.github.io/vanilla-laptop-guide/OpenCore/config-laptop.plist/coffee-lake-plus.html)
+Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) and use MacBookPro16,1 SMBIOS (remember to insert your generated data at platform info section). Setup config.plist using [Coffee Lake Plus](https://dortania.github.io/vanilla-laptop-guide/OpenCore/config-laptop.plist/coffee-lake-plus.html). Read every guide very carefully BEFORE start and know what you're going to do beforehand.
 
 **ACPI changes:**
 
-- SSNC-PLUG - CPU0 into PP00 -> Processor ID on Dell G5 5590 is PP00
+- SSNC-PLUG - CPU0 into PP00 -> Processor ID on this machine is PP00
 
 **DELL SPECIFICS config.plist:**
 
 - RebuildAppleMemoryMap = False
 - UpdateSMBIOSMode = Custom
 - CustomSMBIOSGuid = True
-- Audio layout-id = 15 
+- Audio layout-id = 15 (other channels worked, but 15 offered better stability and sound quality overall)
 
 **Patching CFG Lock**
 
 - Download BIOS from Dell website (version must be the same, variable can change after updates). 
 - Dump bios with DecompNewDell.py (used Python3)
 - Open dumped bios with UEFITool
-- Search for CFG Lock, VarStoreInfo (VarOffset/VarName). Variable name come just after (in my case, using BIOS 1.13.2, was 0x5C4)
+- Search for "CFG Lock, VarStoreInfo (VarOffset/VarName)". Variable name come just after (in my case, using BIOS 1.13.2, was 0x5C4)
 
 `One Of: CFG Lock, VarStoreInfo (VarOffset/VarName): 0x5C4, VarStore: 0x1, QuestionId: 0x361, Size: 1, Min: 0x0, Max 0x1, Step: 0x0 {05 91 98 03 99 03 61 03 01 00 C4 05 10 10 00 01 00}`
 	`One Of Option: Disabled, Value (8 bit): 0x0 {09 07 04 00 00 00 00}`
@@ -66,7 +66,7 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 
 ## TODO
 
-- Proper port mapping - Fix USB3 ports not delivering more power than 500. Only Thunderbolt3/USB-C port delivers full power.
+- ~~Proper port mapping - Fix USB3 ports not delivering more power than 500. Only Thunderbolt3/USB-C port delivers full power.~~
 - Install Fenvi BCM94360NG Wi-Fi/Bluetooth card (waiting for arrival, using TP Link USB dongle for now)
 - ~~Review CPU frequencies.~~
 - ~~Remap brightness to F11 and F12 (currently Fn+S Fn+B)~~ 
@@ -111,6 +111,12 @@ Some features need improvement. I'm waiting for Fenvi BCM94360NG airport adapter
 - [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) - Generate Mac serials
 
 ## File History
+
+**July 16 2020** (v1.1) - STABLE
+
+- USB mapped
+- Fixed error that disconnecting device from USB-C port cause high usage of kernel_task. USB-C is not working with USB3 for now.
+- I think dGPU is turning on after sleep cause of temperature changes and estimated battery. Before sleep idles between 45-50. After wake idles at 55-60 degrees.
 
 **July 14 2020** (v1.0) - STABLE
 
