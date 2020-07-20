@@ -27,3 +27,8 @@ OPENCORE/EFI/OC/Kexts/USBInjectAll.kext/._Contents
 OPENCORE/EFI/OC/Kexts/USBInjectAll.kext/Contents/._Info.plist
 OPENCORE/EFI/OC/Kexts/USBInjectAll.kext/Contents/._MacOS
 OPENCORE/EFI/OC/Kexts/USBInjectAll.kext/Contents/MacOS/._USBInjectAll
+OPENCORE/EFI/OC/Kexts/._NVMeFix.kext
+OPENCORE/EFI/OC/Kexts/NVMeFix.kext/._Contents
+OPENCORE/EFI/OC/Kexts/NVMeFix.kext/Contents/._MacOS
+OPENCORE/EFI/OC/Kexts/NVMeFix.kext/Contents/._Info.plist
+OPENCORE/EFI/OC/Kexts/NVMeFix.kext/Contents/MacOS/._NVMeFix
