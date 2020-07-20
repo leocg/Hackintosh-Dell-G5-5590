@@ -43,7 +43,6 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 
 **DELL SPECIFICS config.plist:**
 
-- RebuildAppleMemoryMap = False
 - UpdateSMBIOSMode = Custom
 - CustomSMBIOSGuid = True
 - Audio layout-id = 15 (other channels worked, but 15 offered better stability and sound quality overall)
@@ -111,6 +110,10 @@ Some features need improvement. I'm waiting for Fenvi BCM94360NG airport adapter
 - [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) - Generate Mac serials
 
 ## File History
+
+**July 19 2020** (v1.2) 
+
+- Minor adjustments
 
 **July 17 2020** (v1.1) 
 
