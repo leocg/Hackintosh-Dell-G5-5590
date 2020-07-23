@@ -104,3 +104,33 @@ UTIL/OPENCORE DEBUG/EFI/OC/Kexts/NVMeFix.kext/Contents/._Info.plist
 UTIL/OPENCORE DEBUG/EFI/OC/Kexts/NVMeFix.kext/Contents/._MacOS
 UTIL/OPENCORE DEBUG/EFI/OC/Kexts/NVMeFix.kext/Contents/MacOS/._NVMeFix
 UTIL/OPENCORE DEBUG/EFI/OC/Kexts/SMCBatteryManager.kext/._Contents
+OPENCORE/EFI/OC/Kexts/._SMCBatteryManager.kext
+OPENCORE/EFI/OC/Kexts/._SMCDellSensors.kext
+OPENCORE/EFI/OC/Kexts/._SMCProcessor.kext
+OPENCORE/EFI/OC/Kexts/._VirtualSMC.kext
+OPENCORE/EFI/OC/Kexts/SMCBatteryManager.kext/._Contents
+OPENCORE/EFI/OC/Kexts/SMCBatteryManager.kext/Contents/.__CodeSignature
+OPENCORE/EFI/OC/Kexts/SMCBatteryManager.kext/Contents/._Info.plist
+OPENCORE/EFI/OC/Kexts/SMCBatteryManager.kext/Contents/._MacOS
+OPENCORE/EFI/OC/Kexts/SMCBatteryManager.kext/Contents/._Resources
+OPENCORE/EFI/OC/Kexts/SMCBatteryManager.kext/Contents/_CodeSignature/._CodeResources
+OPENCORE/EFI/OC/Kexts/SMCBatteryManager.kext/Contents/MacOS/._SMCBatteryManager
+OPENCORE/EFI/OC/Kexts/SMCBatteryManager.kext/Contents/Resources/._SSDT-BATC.dsl
+OPENCORE/EFI/OC/Kexts/SMCDellSensors.kext/._Contents
+OPENCORE/EFI/OC/Kexts/SMCDellSensors.kext/Contents/.__CodeSignature
+OPENCORE/EFI/OC/Kexts/SMCDellSensors.kext/Contents/._Info.plist
+OPENCORE/EFI/OC/Kexts/SMCDellSensors.kext/Contents/._MacOS
+OPENCORE/EFI/OC/Kexts/SMCDellSensors.kext/Contents/_CodeSignature/._CodeResources
+OPENCORE/EFI/OC/Kexts/SMCDellSensors.kext/Contents/MacOS/._SMCDellSensors
+OPENCORE/EFI/OC/Kexts/SMCProcessor.kext/._Contents
+OPENCORE/EFI/OC/Kexts/SMCProcessor.kext/Contents/.__CodeSignature
+OPENCORE/EFI/OC/Kexts/SMCProcessor.kext/Contents/._Info.plist
+OPENCORE/EFI/OC/Kexts/SMCProcessor.kext/Contents/._MacOS
+OPENCORE/EFI/OC/Kexts/SMCProcessor.kext/Contents/_CodeSignature/._CodeResources
+OPENCORE/EFI/OC/Kexts/SMCProcessor.kext/Contents/MacOS/._SMCProcessor
+OPENCORE/EFI/OC/Kexts/VirtualSMC.kext/._Contents
+OPENCORE/EFI/OC/Kexts/VirtualSMC.kext/Contents/.__CodeSignature
+OPENCORE/EFI/OC/Kexts/VirtualSMC.kext/Contents/._Info.plist
+OPENCORE/EFI/OC/Kexts/VirtualSMC.kext/Contents/._MacOS
+OPENCORE/EFI/OC/Kexts/VirtualSMC.kext/Contents/_CodeSignature/._CodeResources
+OPENCORE/EFI/OC/Kexts/VirtualSMC.kext/Contents/MacOS/._VirtualSMC

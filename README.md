@@ -111,6 +111,10 @@ Some features need improvement. I'm waiting for Fenvi BCM94360NG airport adapter
 
 ## File History
 
+**July 23 2020** (v1.2) 
+
+- Added Dell Sensors combatibility with VirtualSMC (using compiled version, not release). Use with HWMonitorSMC2 to view all sensors and fan speed. iStat Menus don't display any information.
+
 **July 19 2020** (v1.2) 
 
 - Minor adjustments
