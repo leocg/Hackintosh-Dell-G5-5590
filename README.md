@@ -11,7 +11,7 @@ Display: 15.6 1080p (1920x1080) 144hz
 Memory: 16GB DDR4 2666MHz (8GBx2)  
 Storage: 512GB Intel NVMe SSD + 1tb SSD (Crucial BX500)  
 Audio: Realtek ALC3204-CG  
-Wifi/Bluetooth: ~~Qualcomm QCA61x4A (DW1820)~~ Fenvi BCM94360NG (waiting for arrival)  
+Wifi/Bluetooth: ~~Qualcomm QCA61x4A (DW1820)~~ Fenvi BCM94360NG (ordered m2 card at aliexpress from Fenvi Store)  
 Ethernet: Killer GB E2500V2 10/100/1000 Mbps  
 USB 3.1  
 Thunderbolt    
@@ -66,7 +66,7 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 ## TODO
 
 - ~~Proper port mapping - Fix USB3 ports not delivering more power than 500. Only Thunderbolt3/USB-C port delivers full power.~~
-- Install Fenvi BCM94360NG Wi-Fi/Bluetooth card (waiting for arrival, using TP Link USB dongle for now)
+- ~~Install Fenvi BCM94360NG Wi-Fi/Bluetooth card (waiting for arrival, using TP Link USB dongle for now)~~
 - ~~Review CPU frequencies.~~
 - ~~Remap brightness to F11 and F12 (currently Fn+S Fn+B)~~ 
 - Quicktime and iTunes show artifacts while full screen. IINA runs fine, tested .mp4, .mkv and .ts movies
@@ -91,12 +91,10 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 - [x] Apple bootloader (OpenCanopy) - **Removed until it gets more stable, sometimes it boots slow and I can't select any partition other than default**
 - [ ] Thunderbolt 3 video out (Don't have a Thunderbolt->DisplayPort adapter yet)
 - [ ] Ethernet (no drivers yet for Killer GB E2500V2)
-- [ ] Apple Communications (Continuity, airdrop, airplay, etc) - Waiting for Airport Card
-- [ ] Wi-Fi - Waiting for Airport Card
+- [x] Apple Communications (Continuity, airdrop, airplay, etc) - Using Fenvi BCM94360NG
+- [x] Wi-Fi - Using Fenvi BCM94360NG
 
 ## Future reading
-
-Some features need improvement. I'm waiting for Fenvi BCM94360NG airport adapter to unlock remaining features.
 
 - [ ] Share Bluetooth pairing between windows and mac: follow [this](https://www.reddit.com/r/hackintosh/comments/hjwu43/howto_share_a_bluetooth_pairing_headphones_etc/)
 - [ ] Thunderbolt 3 Video out fix: follow [this](https://www.tonymacx86.com/threads/dell-g5-5590-thunderbolt-display-need-help.293776/)
@@ -109,7 +107,11 @@ Some features need improvement. I'm waiting for Fenvi BCM94360NG airport adapter
 - [ProperTree](https://github.com/corpnewt/ProperTree) - Generate config.plist based on OC folder
 - [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) - Generate Mac serials
 
-## File History
+## History
+
+**July 31 2020** (v1.2) 
+
+- Switched stock wifi card with Fenvi BCM94360NG, worked OOB with Catalina 10.15.6.
 
 **July 23 2020** (v1.2) 
 
