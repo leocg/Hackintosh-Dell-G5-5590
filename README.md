@@ -109,6 +109,11 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 
 ## History
 
+**August 02 2020** (v1.3) 
+
+- Made some tweaks all around. Laptop is stable, good battery life and performance. 
+- KNOWN ISSUES: Battery drain after wake from sleep. Already tried different methods without success (Optimus Method, Bumblebee Method, GPU Spoof, Flag device in config.plist... None of then worked). I'm searching for solutions outside GPU scope, maybe it's something related to SAT0 or NVPR error showing in kernel boot log.
+
 **July 31 2020** (v1.2) 
 
 - Switched stock wifi card with Fenvi BCM94360NG, worked OOB with Catalina 10.15.6.
