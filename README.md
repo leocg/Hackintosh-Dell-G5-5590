@@ -109,6 +109,10 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 
 ## History
 
+**August 03 2020** (v1.4) 
+
+- Removed NullEthernet.kext
+
 **August 02 2020** (v1.3) 
 
 - Made some tweaks all around. Laptop is stable, good battery life and performance. 
