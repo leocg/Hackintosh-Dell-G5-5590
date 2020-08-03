@@ -23,13 +23,11 @@ This is my "Hackintosh Diary", will be using it to maintain a triple boot Dell G
 
 Don't directly use my EFI folder, your computer won't boot cause it has CFG Lock disabled and other post install stuff.
 
-Vanilla Boot could be accomplished using OPENCORE USB BOOT folder.
+Vanilla Boot could be accomplished using OPENCORE USB BOOT folder. Use this folder to make a bootable USB disk with macOS Catalina (tested with 10.5.5).
 
-Using [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) from [Dortania](https://dortania.github.io/)
+Used [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) from [Dortania](https://dortania.github.io/), but laptop and desktop guide was merged into [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/).
 
 Most work is done post installation, be prepared to read a lot. CFG Lock is difficult to understand but very simple to execute. Disabling CFG Lock and dGPU using [Optimus Method](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/laptop-disable.html#optimus-method) has major impact on battery life.
-
-I'm investigating some issues with freeze when plugging in and out more than once and quickly and some kernel panic using Intel Power Gadget.
 
 Bought this laptop to replace my MacBook Pro 2011 17". So far is great! Using primary for web development.
 
@@ -63,12 +61,9 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 - After applying patch chech in Hackintool -> Utilities -> GetAppleIntelInfo
 - Inside IA32_MISC_ENABLES  (0x1A0) : 0x850089: **CFG Lock  : 0 (MSR not locked)**
 
-## TODO
+## KNOWN ISSUES
 
-- ~~Proper port mapping - Fix USB3 ports not delivering more power than 500. Only Thunderbolt3/USB-C port delivers full power.~~
-- ~~Install Fenvi BCM94360NG Wi-Fi/Bluetooth card (waiting for arrival, using TP Link USB dongle for now)~~
-- ~~Review CPU frequencies.~~
-- ~~Remap brightness to F11 and F12 (currently Fn+S Fn+B)~~ 
+- Battery drain after wake from sleep. Already tried different methods without success (Optimus Method, Bumblebee Method, GPU Spoof, Flag device in config.plist... None of then worked). I'm searching for solutions but for now I'm shutting down laptop instead of putting to sleep.
 - Quicktime and iTunes show artifacts while full screen. IINA runs fine, tested .mp4, .mkv and .ts movies
 
 ## WORKING / NOT WORKING
@@ -76,7 +71,6 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 - [x] iGPU Acceleration 
 - [x] Backlight 
 - [x] 144hz display 
-- [x] Bluetooth
 - [x] Apple Services
 - [x] Keyboard
 - [x] Keyboard backlight (RGB backlight works, but had to setup at Windows 10 Alienware Command Center. When boot at macOS the config remais, including color. Cannot turn off keyboard backlight in macOS for now. I found some information regarding sending information via USB to keyboard backlight, looking for a solution to inject colors)
@@ -88,26 +82,18 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 - [x] Card reader
 - [x] CFG Lock disabled
 - [x] NVRAM - Verified using [this](https://dortania.github.io/OpenCore-Desktop-Guide/post-install/nvram.html#verifying-if-you-have-working-nvram) method
-- [x] Apple bootloader (OpenCanopy) - **Removed until it gets more stable, sometimes it boots slow and I can't select any partition other than default**
-- [ ] Thunderbolt 3 video out (Don't have a Thunderbolt->DisplayPort adapter yet)
+- [x] Bluetooth - Using Fenvi BCM94360NG (Original card worked with bluetooth out of box too)
+- [x] Apple Communications (Continuity, airdrop, airplay, etc) - Using Fenvi BCM94360NG (Original card didn't provide support)
+- [x] Wi-Fi - Using Fenvi BCM94360NG (Original card don't work on macOS)
+- [ ] Thunderbolt 3 video out (Don't have a Thunderbolt->DisplayPort adapter to test)
 - [ ] Ethernet (no drivers yet for Killer GB E2500V2)
-- [x] Apple Communications (Continuity, airdrop, airplay, etc) - Using Fenvi BCM94360NG
-- [x] Wi-Fi - Using Fenvi BCM94360NG
 
 ## Future reading
 
 - [ ] Share Bluetooth pairing between windows and mac: follow [this](https://www.reddit.com/r/hackintosh/comments/hjwu43/howto_share_a_bluetooth_pairing_headphones_etc/)
 - [ ] Thunderbolt 3 Video out fix: follow [this](https://www.tonymacx86.com/threads/dell-g5-5590-thunderbolt-display-need-help.293776/)
 
-## TOOLS
-
-- [OpenCore 0.5.9](https://github.com/acidanthera/OpenCorePkg)
-- [gibMacOS](https://github.com/corpnewt/gibMacOS) - Download macOS vanilla install
-- [MountEFI](https://github.com/corpnewt/MountEFI) - Mount EFI partitions
-- [ProperTree](https://github.com/corpnewt/ProperTree) - Generate config.plist based on OC folder
-- [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) - Generate Mac serials
-
-## History
+## CHANGELOG
 
 **August 03 2020** (v1.4) 
 
@@ -125,7 +111,6 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 **August 02 2020** (v1.3) 
 
 - Made some tweaks all around. Laptop is stable, good battery life and performance. 
-- KNOWN ISSUES: Battery drain after wake from sleep. Already tried different methods without success (Optimus Method, Bumblebee Method, GPU Spoof, Flag device in config.plist... None of then worked). I'm searching for solutions outside GPU scope, maybe it's something related to SAT0 or NVPR error showing in kernel boot log.
 
 **July 31 2020** (v1.2) 
 
@@ -178,33 +163,3 @@ Fake ethernet to make iCloud work, fixed battery status.
 First version fast and functional. AML files fixed to match notebook specs. Still working with drivers, need to bring back battery status.
 
 **July 07 2020 - Initial**
-
-### Recovery operating system 
-
-- macOS Catalina 10.5.5 (full install)
-
-### KEXTs
-
-- AppleALC.kext ([1.5.0](https://github.com/acidanthera/AppleALC/releases))
-- Lilu.kext ([1.4.5](https://github.com/acidanthera/Lilu/releases))
-- NoTouchID.kext ([1.0.3](https://github.com/al3xtjames/NoTouchID/releases))
-- VirtualSMC.kext ([1.1.4](https://github.com/acidanthera/virtualsmc/releases))
-  - SMCBatteryManager.kext (1.0)
-  - SMCLightSensor.kext (1.0)
-  - SMCProcessor.kext (1.1.4)
-  - SMCSuperIO.kext (1.1.4)
-- VoodooI2C.kext ([2.4.3](https://github.com/VoodooI2C/VoodooI2C/releases))
-  - VoodooI2CHID.kext (1.0)
-- VoodooPS2Controller.kext ([2.1.5](https://github.com/acidanthera/VoodooPS2/releases))
-- WhateverGreen.kext ([1.4.0](https://github.com/acidanthera/whatevergreen/releases))
-
-### ACPI
-
-- ~~SSDT-AWAC.aml~~
-- SSDT-EC-USBX.aml [SSDT-EC-USBX.dsl](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-EC-USBX.dsl)
-- SSDT-GPI0.aml [SSDT-GPI0.dsl](https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/decompiled/SSDT-GPI0.dsl)
-- SSDT-PLUG.aml [SSDT-PLUG.dsl](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PLUG.dsl)
-- SSDT-PNLF-CFL.aml [SSDT-PNLF-CFL.dsl](https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/decompiled/SSDT-PNLF-CFL.dsl)
-
-All dsl files downloaded and compiled 07 07 2020. 
-
