@@ -111,7 +111,16 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 
 **August 03 2020** (v1.4) 
 
-- Removed NullEthernet.kext
+- Removed NullEthernet.kext (don't need anymore cause installed Fenvi Wi-Fi card)
+- Updated OpenCore to version 0.6.0
+- Updated Kexts:
+  - NoTouchID-1.0.4-RELEASE
+  - WhateverGreen-1.4.1-RELEASE
+  - Lilu-1.4.6-RELEASE
+  - VirtualSMC-1.1.5-RELEASE
+  - AppleALC-1.5.1-RELEASE
+  - VoodooPS2Controller-2.1.6-RELEASE
+  - NVMeFix-1.0.3-RELEASE
 
 **August 02 2020** (v1.3) 
 
