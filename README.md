@@ -10,7 +10,7 @@ iGPU: Intel UHD 630 Graphics (Video Out using a **USB Type-C to DisplayPort adap
 Display: 15.6 1080p (1920x1080) 144hz  
 Memory: 16GB DDR4 2666MHz (8GBx2)  
 Storage: 512GB Intel NVMe SSD + 1tb SSD (Crucial BX500)  
-Audio: Realtek ALC3204-CG  
+Audio: Realtek ALC3204-CG (ALC236)  
 Wifi/Bluetooth: ~~Qualcomm QCA61x4A (DW1820)~~ Fenvi BCM94360NG (ordered m2 card at aliexpress from Fenvi Store)  
 Ethernet: Killer GB E2500V2 10/100/1000 Mbps  
 USB 3.1  
@@ -65,6 +65,9 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 
 - Battery drain after wake from sleep. Already tried different methods without success (Optimus Method, Bumblebee Method, GPU Spoof, Flag device in config.plist... None of then worked). I'm searching for solutions but for now I'm shutting down laptop instead of putting to sleep.
 - Quicktime and iTunes show artifacts while full screen. IINA runs fine, tested .mp4, .mkv and .ts movies
+- Sometimes unplugging/replugging power adaptor causes keyboard lag and I have to reboot in order to resolve the issue.
+- Sometimes unplugging/replugging quickly causes laptop to crash. I'm testing SSDT-XOSI.aml, found somewhere that it would fix the problem, but didn't resolve it yet.
+- Headphone port don't work with mic. I'm researching how to make a custom layout for AppleALC in order to fix it.
 
 ## WORKING / NOT WORKING
 
@@ -86,7 +89,7 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 - [x] Apple Communications (Continuity, airdrop, airplay, etc) - Using Fenvi BCM94360NG (Original card didn't provide support)
 - [x] Wi-Fi - Using Fenvi BCM94360NG (Original card don't work on macOS)
 - [ ] Thunderbolt 3 video out (Don't have a Thunderbolt->DisplayPort adapter to test)
-- [ ] Ethernet (no drivers yet for Killer GB E2500V2)
+- [x] Ethernet (Thanks [@radaelilucca](https://github.com/radaelilucca))
 
 ## Future reading
 
@@ -94,6 +97,12 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 - [ ] Thunderbolt 3 Video out fix: follow [this](https://www.tonymacx86.com/threads/dell-g5-5590-thunderbolt-display-need-help.293776/)
 
 ## CHANGELOG
+
+**September 04 2020** (v1.5)
+
+- Working Ethernet using RealtekRTL8111.kext (Changed OSBundleRequired from Network-Root to Root inside kext's Info.plist)
+- Some kexts are development version instead of release cause resolved some issues. Next week I'll put release version when Acidanthera commit.
+- I'm not using current Voodol2C/VoodooPS2Controller kext because latest version broken multitouch support with this laptop.
 
 **August 03 2020** (v1.4) 
 
