@@ -62,6 +62,15 @@ The steps above I followed to find the correct CFG Lock variable name. After tha
 
 - Prepare EFI Boot Disk using [Disabling CFG Lock](https://dortania.github.io/OpenCore-Desktop-Guide/extras/msr-lock#disabling-cfg-lock) instructions and patch using **setup_var_3 0x5C4 0x00**
 
+**If you don't feel confortable messing with bios setting, just change the settings below in your config.plist:**
+
+- AppleCpuPmCfgLock -> YES 
+- AppleXcpmCfgLock -> YES 
+
+**Generating serial numbers:**
+
+Use [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS/) script to generate your device serial number. Put it into PlatformInfo->Generic (MLB, SystemSerialNumber and SystemUUID). Use MacBookPro16,1 SMBIOS.
+
 ## KNOWN ISSUES
 
 - Battery drain after wake from sleep. Already tried different methods without success (Optimus Method, Bumblebee Method, GPU Spoof, Flag device in config.plist... None of then worked). I'm searching for solutions but for now I'm shutting down laptop instead of putting to sleep.
