@@ -29,7 +29,9 @@ Used [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) fr
 
 Most work is done post installation, be prepared to read a lot. CFG Lock is difficult to understand but very simple to execute. Disabling CFG Lock and dGPU using [Optimus Method](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/laptop-disable.html#optimus-method) has major impact on battery life.
 
-Bought this laptop to replace my MacBook Pro 2011 17". So far is great! Using primary for web development.
+If you like this guide and can help with any value, please buy me a beer!
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=N7EY58HHR9RUQ)
 
 ## INSTALLATION
 
