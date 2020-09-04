@@ -1,6 +1,6 @@
 # Hackintosh-Dell-G5-5590
 
-## Laptop Specs
+## :computer: ​Laptop Specs
 
 ### Dell G5 5590 a80p 
 
@@ -29,9 +29,11 @@ Used [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) fr
 
 Most work is done post installation, be prepared to read a lot. CFG Lock is difficult to understand but very simple to execute. Disabling CFG Lock and dGPU using [Optimus Method](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/laptop-disable.html#optimus-method) has major impact on battery life.
 
-If you like this guide and can help with any value, please buy me a beer!
+If you like this guide and can help with any value, please buy me a coffee :coffee:
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=N7EY58HHR9RUQ)
+
+
 
 ## INSTALLATION
 
@@ -54,14 +56,11 @@ Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) 
 - Open dumped bios with UEFITool
 - Search for "CFG Lock, VarStoreInfo (VarOffset/VarName)". Variable name come just after (in my case, using BIOS 1.13.2, was 0x5C4)
 
-`One Of: CFG Lock, VarStoreInfo (VarOffset/VarName): 0x5C4, VarStore: 0x1, QuestionId: 0x361, Size: 1, Min: 0x0, Max 0x1, Step: 0x0 {05 91 98 03 99 03 61 03 01 00 C4 05 10 10 00 01 00}`
-	`One Of Option: Disabled, Value (8 bit): 0x0 {09 07 04 00 00 00 00}`
-	`One Of Option: Enabled, Value (8 bit): 0x1 (default) {09 07 03 00 30 00 01}`
-`End One Of {29 02}`
+`One Of: CFG Lock, VarStoreInfo (VarOffset/VarName): 0x5C4, VarStore: 0x1 [...]
+
+The steps above I followed to find the correct CFG Lock variable name. After that, simply boot into Modified GRUB Shell and change variable from 0x5C4 to 0x00:
 
 - Prepare EFI Boot Disk using [Disabling CFG Lock](https://dortania.github.io/OpenCore-Desktop-Guide/extras/msr-lock#disabling-cfg-lock) instructions and patch using **setup_var_3 0x5C4 0x00**
-- After applying patch chech in Hackintool -> Utilities -> GetAppleIntelInfo
-- Inside IA32_MISC_ENABLES  (0x1A0) : 0x850089: **CFG Lock  : 0 (MSR not locked)**
 
 ## KNOWN ISSUES
 
