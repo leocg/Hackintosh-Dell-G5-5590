@@ -108,6 +108,15 @@ Use [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS/) script to generate your 
 
 ## CHANGELOG
 
+**September 07 2020** (v1.6)
+
+- Updated OpenCore to version 0.6.1 RELEASE
+- Updated Kexts:
+  - WhateverGreen-1.4.2-RELEASE
+  - Lilu-1.4.7-RELEASE
+  - VirtualSMC-1.1.6-RELEASE
+  - AppleALC-1.5.2-RELEASE
+
 **September 04 2020** (v1.5)
 
 - Working Ethernet using RealtekRTL8111.kext (Changed OSBundleRequired from Network-Root to Root inside kext's Info.plist)
