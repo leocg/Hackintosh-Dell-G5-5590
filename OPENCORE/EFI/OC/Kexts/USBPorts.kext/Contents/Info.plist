@@ -22,7 +22,7 @@
 	<string>1.0</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>MacBookPro16,1-XHC</key>
+		<key>MacBookPro15,2-XHC</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>com.apple.driver.AppleUSBMergeNub</string>
@@ -41,11 +41,11 @@
 				<key>kUSBSleepPortCurrentLimit</key>
 				<integer>2100</integer>
 				<key>kUSBSleepPowerSupply</key>
-				<integer>5100</integer>
+				<integer>2600</integer>
 				<key>kUSBWakePortCurrentLimit</key>
 				<integer>2100</integer>
 				<key>kUSBWakePowerSupply</key>
-				<integer>5100</integer>
+				<integer>3200</integer>
 				<key>port-count</key>
 				<data>
 				EwAAAA==
@@ -107,6 +107,17 @@
 						BQAAAA==
 						</data>
 					</dict>
+					<key>HS06</key>
+					<dict>
+						<key>UsbConnector</key>
+						<integer>255</integer>
+						<key>name</key>
+						<string>HS06</string>
+						<key>port</key>
+						<data>
+						BgAAAA==
+						</data>
+					</dict>
 					<key>HS11</key>
 					<dict>
 						<key>UsbConnector</key>
@@ -165,9 +176,9 @@
 				</dict>
 			</dict>
 			<key>model</key>
-			<string>MacBookPro16,1</string>
+			<string>MacBookPro15,2</string>
 		</dict>
-		<key>MacBookPro16,1-XHC-8086_15db</key>
+		<key>MacBookPro15,2-XHC-8086_15db</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>com.apple.driver.AppleUSBMergeNub</string>
@@ -186,11 +197,11 @@
 				<key>kUSBSleepPortCurrentLimit</key>
 				<integer>2100</integer>
 				<key>kUSBSleepPowerSupply</key>
-				<integer>5100</integer>
+				<integer>2600</integer>
 				<key>kUSBWakePortCurrentLimit</key>
 				<integer>2100</integer>
 				<key>kUSBWakePowerSupply</key>
-				<integer>5100</integer>
+				<integer>3200</integer>
 				<key>port-count</key>
 				<data>
 				AwAAAA==
@@ -211,7 +222,7 @@
 				</dict>
 			</dict>
 			<key>model</key>
-			<string>MacBookPro16,1</string>
+			<string>MacBookPro15,2</string>
 		</dict>
 	</dict>
 	<key>OSBundleRequired</key>

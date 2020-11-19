@@ -2,32 +2,23 @@
 
 ## :computer: ​Laptop Specs
 
-### Dell G5 5590 a80p 
+### Dell G5 5590 A70P/M70P/A80P/M80P [RTX 2060 or GTX 1660 Ti models]
 
 Processor: Core i7-9750H 6C/12T (Coffee Lake Plus / Coffee Lake Refresh) 
-iGPU: Intel UHD 630 Graphics (Video Out using a **USB Type-C to DisplayPort adapter** into the USB 3.1 Gen 2 Type-C/DisplayPort 1.2/Thunderbolt 3 port)  
-~~dGPU: nVidia GeForce RTX 2060~~ ~~(HDMI 2.0b port /mini DisplayPort 1.4)~~  
+iGPU: Intel UHD 630 Graphics 
+~~dGPU: nVidia GeForce RTX 2060~~  (not supported)
 Display: 15.6 1080p (1920x1080) 144hz  
 Memory: 16GB DDR4 2666MHz (8GBx2)  
-Storage: 512GB Intel NVMe SSD + 1tb SSD (Crucial BX500)  
+Storage: 512GB Intel NVMe SSD  
 Audio: Realtek ALC3204-CG (ALC236)  
-Wifi/Bluetooth: ~~Qualcomm QCA61x4A (DW1820)~~ Fenvi BCM94360NG (ordered m2 card at aliexpress from Fenvi Store)  
+Wifi/Bluetooth: ~~Qualcomm QCA61x4A (DW1820)~~ (not supported, replaced with card described below:)
 Ethernet: Killer GB E2500V2 10/100/1000 Mbps  
-USB 3.1  
-Thunderbolt    
-Webcam + Microphone  
+Thunderbolt 3 / Webcam / Microphone / Card Reader    
 
-## About
+##### EXTRA HARDWARE USED:
 
-This is my "Hackintosh Diary", will be using it to maintain a triple boot Dell G5 5590 a80p between macOS, Arch Linux and Windows.  
-
-Don't directly use my EFI folder, your computer won't boot cause it has CFG Lock disabled and other post install stuff.
-
-Vanilla Boot could be accomplished using OPENCORE USB BOOT folder. Use this folder to make a bootable USB disk with macOS Catalina (tested with 10.5.5).
-
-Used [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) from [Dortania](https://dortania.github.io/), but laptop and desktop guide was merged into [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/).
-
-Most work is done post installation, be prepared to read a lot. CFG Lock is difficult to understand but very simple to execute. Disabling CFG Lock and dGPU using [Optimus Method](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/laptop-disable.html#optimus-method) has major impact on battery life.
+Storage: 1tb SSD (Crucial BX500) (I recommend a second disk to dual boot without issues)  
+Wifi/Bluetooth: Fenvi BCM94360NG (ordered m2 card at aliexpress from Fenvi Store)  
 
 If you like this guide and can help with any value, please buy me a coffee :coffee:
 
@@ -35,78 +26,76 @@ If you like this guide and can help with any value, please buy me a coffee :coff
 
 
 
+
+
 ## INSTALLATION
 
-Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) and use MacBookPro16,1 SMBIOS (remember to insert your generated data at platform info section). Setup config.plist using [Coffee Lake Plus](https://dortania.github.io/vanilla-laptop-guide/OpenCore/config-laptop.plist/coffee-lake-plus.html). Read every guide very carefully BEFORE start and know what you're going to do beforehand.
+Tested with RTX 2060 and GTX 1660 Ti versions, both [share same hardware specs](https://topics-cdn.dell.com/pdf/g-series-15-5590-laptop_setup-guide_pt-br.pdf) (Thunderbolt 3 port)
 
-**ACPI changes:**
+### BIOS VERSION: **1.13.2** (Check your BIOS version before anything)
 
-- SSNC-PLUG - CPU0 into PP00 -> Processor ID on this machine is PP00
+I'm working on a new install guide. For now:
 
-**DELL SPECIFICS config.plist:**
+- Read [official guide](https://dortania.github.io/OpenCore-Install-Guide/) to understand stuff
+- Use EFI folder provided, open config.plist and make some changes:
+- Generate your MacBookPro15,2 serials using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS/) and insert it into your config.plist (under PlatformInfo->Generic). You need to update MLB, SystemSerialNumber and SystemUUID
+- If you [disabled CFG Lock in bios using MobGrubShell](https://dortania.github.io/OpenCore-Install-Guide/extras/msr-lock.html), change AppleCpuPmCfgLock and AppleXcpmCfgLock to **NO** under Kernel->Quirks 
+- After installation you can disable OpenCore boot picker under Misc->Boot->ShowPicker (change to NO)
+- After installation you can disable verbose mode to show Apple logo during all boot stages at NVRAM->Add->7C436110-AB2A-4BBB-A880-FE41995C9F82, removing **-v** argument
 
-- UpdateSMBIOSMode = Custom
-- CustomSMBIOSGuid = True
-- Audio layout-id = 15 (other channels worked, but 15 offered better stability and sound quality overall)
 
-**Patching CFG Lock**
-
-- Download BIOS from Dell website (version must be the same, variable can change after updates). 
-- Dump bios with DecompNewDell.py (used Python3)
-- Open dumped bios with UEFITool
-- Search for "CFG Lock, VarStoreInfo (VarOffset/VarName)". Variable name come just after (in my case, using BIOS 1.13.2, was 0x5C4)
-
-`One Of: CFG Lock, VarStoreInfo (VarOffset/VarName): 0x5C4, VarStore: 0x1 [...]
-
-The steps above I followed to find the correct CFG Lock variable name. After that, simply boot into Modified GRUB Shell and change variable from 0x5C4 to 0x00:
-
-- Prepare EFI Boot Disk using [Disabling CFG Lock](https://dortania.github.io/OpenCore-Desktop-Guide/extras/msr-lock#disabling-cfg-lock) instructions and patch using **setup_var_3 0x5C4 0x00**
-
-**If you don't feel confortable messing with bios setting, just change the settings below in your config.plist:**
-
-- AppleCpuPmCfgLock -> YES 
-- AppleXcpmCfgLock -> YES 
-
-**Generating serial numbers:**
-
-Use [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS/) script to generate your device serial number. Put it into PlatformInfo->Generic (MLB, SystemSerialNumber and SystemUUID). Use MacBookPro16,1 SMBIOS.
 
 ## KNOWN ISSUES
 
-- Battery drain after wake from sleep. Already tried different methods without success (Optimus Method, Bumblebee Method, GPU Spoof, Flag device in config.plist... None of then worked). I'm searching for solutions but for now I'm shutting down laptop instead of putting to sleep.
 - Quicktime and iTunes show artifacts while full screen. IINA runs fine, tested .mp4, .mkv and .ts movies
-- Sometimes unplugging/replugging power adaptor causes keyboard lag and I have to reboot in order to resolve the issue.
-- Sometimes unplugging/replugging quickly causes laptop to crash. I'm testing SSDT-XOSI.aml, found somewhere that it would fix the problem, but didn't resolve it yet.
-- Headphone port don't work with mic. I'm researching how to make a custom layout for AppleALC in order to fix it.
+- Sometimes unplugging/replugging quickly causes laptop to crash. To avoid this issue, put laptop to sleep before plug or unplugg the power chord.
 
-## WORKING / NOT WORKING
 
-- [x] iGPU Acceleration 
-- [x] Backlight 
-- [x] 144hz display 
-- [x] Apple Services
-- [x] Keyboard
-- [x] Keyboard backlight (RGB backlight works, but had to setup at Windows 10 Alienware Command Center. When boot at macOS the config remais, including color. Cannot turn off keyboard backlight in macOS for now. I found some information regarding sending information via USB to keyboard backlight, looking for a solution to inject colors)
-- [x] Trackpad
-- [x] Audio
-- [x] Microphone
-- [x] Webcam
-- [x] USB3 ports 
-- [x] Card reader
-- [x] CFG Lock disabled
-- [x] NVRAM - Verified using [this](https://dortania.github.io/OpenCore-Desktop-Guide/post-install/nvram.html#verifying-if-you-have-working-nvram) method
-- [x] Bluetooth - Using Fenvi BCM94360NG (Original card worked with bluetooth out of box too)
-- [x] Apple Communications (Continuity, airdrop, airplay, etc) - Using Fenvi BCM94360NG (Original card didn't provide support)
-- [x] Wi-Fi - Using Fenvi BCM94360NG (Original card don't work on macOS)
-- [ ] Thunderbolt 3 video out (Don't have a Thunderbolt->DisplayPort adapter to test)
-- [x] Ethernet (Thanks [@radaelilucca](https://github.com/radaelilucca))
 
-## Future reading
+## WORKING
 
-- [ ] Share Bluetooth pairing between windows and mac: follow [this](https://www.reddit.com/r/hackintosh/comments/hjwu43/howto_share_a_bluetooth_pairing_headphones_etc/)
-- [ ] Thunderbolt 3 Video out fix: follow [this](https://www.tonymacx86.com/threads/dell-g5-5590-thunderbolt-display-need-help.293776/)
+:white_check_mark: iGPU Acceleration    
+:white_check_mark: Backlight   
+:white_check_mark: 144hz display   
+:white_check_mark: Apple Services  
+:white_check_mark: Keyboard with backlight (RGB backlight works, but had to setup at Windows 10 Alienware Command Center. When boot at macOS the config remains, including color. Cannot turn off keyboard backlight in macOS for now.)  
+:white_check_mark: Trackpad with multitouch gestures  
+:white_check_mark: Speakers  
+:white_check_mark: Microphone  
+:white_check_mark: Webcam  
+:white_check_mark: USB 2/3/C ports   
+:white_check_mark: Card reader  
+:white_check_mark: CFG Lock disabled  
+:white_check_mark: [NVRAM](https://dortania.github.io/OpenCore-Desktop-Guide/post-install/nvram.html#verifying-if-you-have-working-nvram)  
+:white_check_mark: Bluetooth - Using Fenvi BCM94360NG (Original card worked with bluetooth out of box too)  
+:white_check_mark: USB-C video out  (using generic USB-C to HDMI adapter)  
+:white_check_mark: Ethernet (Thanks [@radaelilucca](https://github.com/radaelilucca))  
+:white_check_mark: :warning: Apple Communications (Continuity, airdrop, etc) - Using Fenvi BCM94360NG (Original card didn't provide support)  
+:white_check_mark: :warning: Wi-Fi - Using Fenvi BCM94360NG (Original card don't work on macOS)    
+:white_check_mark: :warning: Thunderbolt 3 (can see device in Hackintosh but don't have any Thunderbolt peripheral to test)
+
+
+
+
+
+
 
 ## CHANGELOG
+
+**November 19 2020** (v2.0)
+
+- Updated to OpenCore 0.6.3 and kexts to latest version. Tested with Big Sur for 2 weeks without issues.
+
+**September 12 2020** (v1.7.0)
+
+- Fixed dGPU issues after wake, keeping it disabled at all times
+- Fixed video out using USB-C to HDMI adapter changing SMBIOS to MacBookPro15,2
+- Added custom CPU profile tuned for high performance (there's another kext with CPU profile focused on power savings inside Kexts_Extra folder. Replace the version you want with original CPUFriendDataProvider.kext, remember to rename)
+- Removed OpenCore bootpicker. After Dell logo go directly to Apple logo. Change Misc->Boot->ShowPicker to YES if you need the bootpicker.
+- Updated VoodooI2C (2.4.4) and VoodooPS2Controller (2.1.6)
+- Updated Kexts:
+  - VoodooPS2Controller-2.1.6-RELEASE
+  - VoodooI2C-2.4.4
 
 **September 07 2020** (v1.6)
 
@@ -191,3 +180,57 @@ Fake ethernet to make iCloud work, fixed battery status.
 First version fast and functional. AML files fixed to match notebook specs. Still working with drivers, need to bring back battery status.
 
 **July 07 2020 - Initial**
+
+
+
+
+
+
+
+## About
+
+This is my "Hackintosh Diary", will be using it to maintain a triple boot Dell G5 5590 a80p between macOS, Arch Linux and Windows.  
+
+Don't directly use my EFI folder, your computer won't boot cause it has CFG Lock disabled and other post install stuff.
+
+Vanilla Boot could be accomplished using OPENCORE USB BOOT folder. Use this folder to make a bootable USB disk with macOS Catalina (tested with 10.5.5).
+
+Used [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) from [Dortania](https://dortania.github.io/), but laptop and desktop guide was merged into [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/).
+
+Most work is done post installation, be prepared to read a lot. CFG Lock is difficult to understand but very simple to execute. Disabling CFG Lock and dGPU using [Optimus Method](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/laptop-disable.html#optimus-method) has major impact on battery life.
+
+Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) and use MacBookPro16,1 SMBIOS (remember to insert your generated data at platform info section). Setup config.plist using [Coffee Lake Plus](https://dortania.github.io/vanilla-laptop-guide/OpenCore/config-laptop.plist/coffee-lake-plus.html). Read every guide very carefully BEFORE start and know what you're going to do beforehand.
+
+## Config
+
+**ACPI changes:**
+
+- SSNC-PLUG - CPU0 into PP00 -> Processor ID on this machine is PP00
+
+**DELL SPECIFICS config.plist:**
+
+- UpdateSMBIOSMode = Custom
+- CustomSMBIOSGuid = True
+- Audio layout-id = 15 (other channels worked, but 15 offered better stability and sound quality overall)
+
+**Patching CFG Lock**
+
+- Download BIOS from Dell website (version must be the same, variable can change after updates). 
+- Dump bios with DecompNewDell.py (used Python3)
+- Open dumped bios with UEFITool
+- Search for "CFG Lock, VarStoreInfo (VarOffset/VarName)". Variable name come just after (in my case, using BIOS 1.13.2, was 0x5C4)
+
+`One Of: CFG Lock, VarStoreInfo (VarOffset/VarName): 0x5C4, VarStore: 0x1 [...]
+
+The steps above I followed to find the correct CFG Lock variable name. After that, simply boot into Modified GRUB Shell and change variable from 0x5C4 to 0x00:
+
+- Prepare EFI Boot Disk using [Disabling CFG Lock](https://dortania.github.io/OpenCore-Desktop-Guide/extras/msr-lock#disabling-cfg-lock) instructions and patch using **setup_var_3 0x5C4 0x00**
+
+**If you don't feel confortable messing with bios setting, just change the settings below in your config.plist:**
+
+- AppleCpuPmCfgLock -> YES 
+- AppleXcpmCfgLock -> YES 
+
+**Generating serial numbers:**
+
+Use [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS/) script to generate your device serial number. Put it into PlatformInfo->Generic (MLB, SystemSerialNumber and SystemUUID).
