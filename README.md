@@ -47,15 +47,15 @@ I'm working on a new install guide. For now:
 
 ## KNOWN ISSUES
 
-- Quicktime and iTunes show artifacts while full screen. IINA runs fine, tested .mp4, .mkv and .ts movies
-- Sometimes unplugging/replugging quickly causes laptop to crash. To avoid this issue, put laptop to sleep before plug or unplugg the power chord.
+- Music.app don't work with DRM videos.
+- Sometimes unplugging/replugging quickly causes laptop to crash. To avoid this issue, put laptop to sleep before plug or unplug the power chord.
 
 
 
 ## WORKING
 
 :white_check_mark: iGPU Acceleration    
-:white_check_mark: Backlight   
+:white_check_mark: Native brightness control (Thanks [@caiomascarin](https://github.com/caiomascarin))   
 :white_check_mark: 144hz display   
 :white_check_mark: Apple Services  
 :white_check_mark: Keyboard with backlight (RGB backlight works, but had to setup at Windows 10 Alienware Command Center. When boot at macOS the config remains, including color. Cannot turn off keyboard backlight in macOS for now.)  
@@ -76,11 +76,14 @@ I'm working on a new install guide. For now:
 
 
 
-
-
-
-
 ## CHANGELOG
+
+**December 09 2020** (v2.1)
+
+- Updated to OpenCore 0.6.4 and kexts to latest version.
+- Fixed native brightness control (Thanks [@caiomascarin](https://github.com/caiomascarin)) 
+- Added SSDT-Swap-CommandOption.aml because VoodooInput removed this quirk in latest version
+- Added HibernationFixup.kext because I'm testing some issues waking up on battery (sometimes CPU fixes on max clock)
 
 **November 19 2020** (v2.0)
 
