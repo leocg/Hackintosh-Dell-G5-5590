@@ -32,14 +32,14 @@ If you like this guide and can help with any value, please buy me a coffee :coff
 
 Tested with RTX 2060 and GTX 1660 Ti versions, both [share same hardware specs](https://topics-cdn.dell.com/pdf/g-series-15-5590-laptop_setup-guide_pt-br.pdf) (Thunderbolt 3 port)
 
-### BIOS VERSION: **1.13.2** (Check your BIOS version before anything)
+### BIOS VERSION: Tested with **1.13.2** and **1.14.0** (Check your BIOS version before anything)
 
 I'm working on a new install guide. For now:
 
 - Read [official guide](https://dortania.github.io/OpenCore-Install-Guide/) to understand stuff
 - Use EFI folder provided, open config.plist and make some changes:
 - Generate your MacBookPro15,2 serials using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS/) and insert it into your config.plist (under PlatformInfo->Generic). You need to update MLB, SystemSerialNumber and SystemUUID
-- If you [disabled CFG Lock in bios using MobGrubShell](https://dortania.github.io/OpenCore-Install-Guide/extras/msr-lock.html), change AppleCpuPmCfgLock and AppleXcpmCfgLock to **NO** under Kernel->Quirks 
+- If you [disabled CFG Lock in bios using MobGrubShell](https://dortania.github.io/OpenCore-Post-Install/misc/msr-lock.html), change AppleCpuPmCfgLock and AppleXcpmCfgLock to **NO** under Kernel->Quirks 
 - After installation you can disable OpenCore boot picker under Misc->Boot->ShowPicker (change to NO)
 - After installation you can disable verbose mode to show Apple logo during all boot stages at NVRAM->Add->7C436110-AB2A-4BBB-A880-FE41995C9F82, removing **-v** argument
 
@@ -66,7 +66,7 @@ I'm working on a new install guide. For now:
 :white_check_mark: USB 2/3/C ports   
 :white_check_mark: Card reader  
 :white_check_mark: CFG Lock disabled  
-:white_check_mark: [NVRAM](https://dortania.github.io/OpenCore-Desktop-Guide/post-install/nvram.html#verifying-if-you-have-working-nvram)  
+:white_check_mark: [NVRAM](https://dortania.github.io/OpenCore-Post-Install/misc/nvram.html#verifying-if-you-have-working-nvram)  
 :white_check_mark: Bluetooth - Using Fenvi BCM94360NG (Original card worked with bluetooth out of box too)  
 :white_check_mark: USB-C video out  (using generic USB-C to HDMI adapter)  
 :white_check_mark: Ethernet (Thanks [@radaelilucca](https://github.com/radaelilucca))  
@@ -77,6 +77,12 @@ I'm working on a new install guide. For now:
 
 
 ## CHANGELOG
+
+**April 27 2021** (v2.2)
+
+- Updated to OpenCore 0.6.5 and correspondent kexts (https://dortania.github.io/hackintosh/updates/2021/01/04/acidanthera-january.html). 
+- Added enable-backlight-registers-fix property to fix backlight issues with new WhateverGreen
+- Updated broken links from instructions (Thanks [@rafaeldgoliveira](https://github.com/rafaeldgoliveira)))
 
 **December 09 2020** (v2.1)
 
