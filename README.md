@@ -43,7 +43,11 @@ I'm working on a new install guide. For now:
 - After installation you can disable OpenCore boot picker under Misc->Boot->ShowPicker (change to NO)
 - After installation you can disable verbose mode to show Apple logo during all boot stages at NVRAM->Add->7C436110-AB2A-4BBB-A880-FE41995C9F82, removing **-v** argument
 
+### Updating from OpenCore 0.6.5 and below to 0.6.6 and above
 
+If you are updating OpenCore fom 0.6.5 and below to 0.6.6 and above, some extra steps need to be made in order to boot. OpenCore is now standalone and don't use BOOTx64.efi anymore. Also Bootstrap.efi has been replaced with LauncherOption. Check [Updating Bootstrap in 0.6.6](https://dortania.github.io/OpenCore-Post-Install/multiboot/bootstrap.html#updating-bootstrap-in-0-6-6) for more information.
+
+Basically you need to reset NVRAM to erase older boot format in order to load OpenCore. I'm stil tinkering around and will update this part of readme once I'm confident with the steps needed.
 
 ## KNOWN ISSUES
 
@@ -78,9 +82,13 @@ I'm working on a new install guide. For now:
 
 ## CHANGELOG
 
+**April 27 2021** (v2.3)
+
+- Updated to OpenCore 0.6.6 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/02/01/acidanthera-february.html). 
+
 **April 27 2021** (v2.2)
 
-- Updated to OpenCore 0.6.5 and correspondent kexts (https://dortania.github.io/hackintosh/updates/2021/01/04/acidanthera-january.html). 
+- Updated to OpenCore 0.6.5 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/01/04/acidanthera-january.html). 
 - Added enable-backlight-registers-fix property to fix backlight issues with new WhateverGreen
 - Updated broken links from instructions (Thanks [@rafaeldgoliveira](https://github.com/rafaeldgoliveira)))
 
