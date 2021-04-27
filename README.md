@@ -82,6 +82,12 @@ Basically you need to reset NVRAM to erase older boot format in order to load Op
 
 ## CHANGELOG
 
+**April 27 2021** (v2.5)
+
+- Updated to OpenCore 0.6.8 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/04/05/acidanthera-april.html). 
+- Updated CPUFriend to 1.2.3
+- Kept Voodoo files (VoodooI2C, VoodooInput and VoodooPS2Controller) on older versions cause newer one is causing issues with trackpad. I'll update the repo when I solve the problem.
+
 **April 27 2021** (v2.4)
 
 - Updated to OpenCore 0.6.7 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/03/01/acidanthera-march.html). 
