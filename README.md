@@ -82,6 +82,11 @@ Basically you need to reset NVRAM to erase older boot format in order to load Op
 
 ## CHANGELOG
 
+**April 27 2021** (v2.5.1)
+
+- Updated VoodooI2C, VoodooInput and VoodooPS2Controller to latest version
+- Added OpenCanopy to render visual boot picker
+
 **April 27 2021** (v2.5)
 
 - Updated to OpenCore 0.6.8 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/04/05/acidanthera-april.html). 
