@@ -82,6 +82,12 @@ Basically you need to reset NVRAM to erase older boot format in order to load Op
 
 ## CHANGELOG
 
+**April 28 2021** (v2.5.2)
+
+- Added AudioDxe to play boot chime
+- Split EFI into 3 versions: Verbose (text boot picker), OpenCanopy (GUI boot picker) and OpenCanopy + AudioDxe (GUI boot picker and play boot chime like a real mac)
+- Download for each version is avaliable on [Releases](https://github.com/leocg/Hackintosh-Dell-G5-5590/releases/) tab
+
 **April 27 2021** (v2.5.1)
 
 - Updated VoodooI2C, VoodooInput and VoodooPS2Controller to latest version
