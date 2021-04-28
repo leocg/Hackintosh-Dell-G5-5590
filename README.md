@@ -82,6 +82,11 @@ Basically you need to reset NVRAM to erase older boot format in order to load Op
 
 ## CHANGELOG
 
+**April 28 2021** (v2.5.3)
+
+- Fixed audio not playing on boot issue. You may need to reset NVRAM the first time booting with AudioDxe EFI in order to set the correct volume.
+- Added OpenCore 0.6.8 DEBUG version
+
 **April 28 2021** (v2.5.2)
 
 - Added AudioDxe to play boot chime
