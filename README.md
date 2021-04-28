@@ -86,6 +86,7 @@ Basically you need to reset NVRAM to erase older boot format in order to load Op
 
 - Updated VoodooI2C, VoodooInput and VoodooPS2Controller to latest version
 - Added OpenCanopy to render visual boot picker
+- Updated macOS from 11.1 11.1 (20C69) to 11.3 (20E232) without issues using Apple Software Update and OpenCore 0.6.8 EFI.
 
 **April 27 2021** (v2.5)
 
