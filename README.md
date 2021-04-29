@@ -34,20 +34,29 @@ Tested with RTX 2060 and GTX 1660 Ti versions, both [share same hardware specs](
 
 ### BIOS VERSION: Tested with **1.13.2** and **1.14.0** (Check your BIOS version before anything)
 
-I'm working on a new install guide. For now:
-
-- Read [official guide](https://dortania.github.io/OpenCore-Install-Guide/) to understand stuff
-- Use EFI folder provided, open config.plist and make some changes:
-- Generate your MacBookPro15,2 serials using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS/) and insert it into your config.plist (under PlatformInfo->Generic). You need to update MLB, SystemSerialNumber and SystemUUID
-- If you [disabled CFG Lock in bios using MobGrubShell](https://dortania.github.io/OpenCore-Post-Install/misc/msr-lock.html), change AppleCpuPmCfgLock and AppleXcpmCfgLock to **NO** under Kernel->Quirks 
-- After installation you can disable OpenCore boot picker under Misc->Boot->ShowPicker (change to NO)
-- After installation you can disable verbose mode to show Apple logo during all boot stages at NVRAM->Add->7C436110-AB2A-4BBB-A880-FE41995C9F82, removing **-v** argument
+- Read [official guide](https://dortania.github.io/OpenCore-Install-Guide/) to understand stuff, not needed, but it's nice to understand what you're doing
+- Choose EFI folder:
+  - Debug: OpenCore will load in debug mode and print every step on screen and on file (located on EFI partition of USB disk)
+  - Verbose: OpenCore with text only partition picker
+  - OpenCanopy: OpenCore with GUI partition picker
+  - OpenCanopy AudioDxe: OpenCore with GUI partition picker and boot chime sound on boot
+- Open config.plist and make some changes:
+  - If you want to enable verbose mode during installation, go to NVRAM->Add->7C436110-AB2A-4BBB-A880-FE41995C9F82, and insert **-v** on **boot-args**. To disable verbose mode, just remove -v parameter.
+  - Generate your MacBookPro15,2 serials using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS/) and insert it into your config.plist (under PlatformInfo->Generic). You need to update MLB, SystemSerialNumber and SystemUUID
+  - It's recommended to [disable CFG Lock in bios using MobGrubShell](https://dortania.github.io/OpenCore-Post-Install/misc/msr-lock.html). If you disabled it, don't change the lines below. In case you don't want to mess with it, you have to change 2 properties under Kernel->Quirks:
+    - AppleCpuPmCfgLock to **YES** or **1** 
+    - AppleXcpmCfgLock to **YES** or **1**
+    - If you want to disable CFG Lock and don't know how to dump your BIOS, use **setup_var_3 0x5C4 0x00** during the steps of [disabling CFG Lock in bios using MobGrubShell](https://dortania.github.io/OpenCore-Post-Install/misc/msr-lock.html). **only use it if your BIOS is in version 1.13.2 or 1.14.0, Dell could change this location on future updates.** 
+    - **PLEASE DON'T USE THIS COMMAND IF YOU DON'T HAVE A DELL G5 5590 WITH THE SPECS LISTED ABOVE, YOU COULD BRICK YOUR MACHINE.**
+  - After installation you can make the default OpenCore selection by pressing Ctrl+Enter on the partition you want
+  - You can also disable OpenCore boot picker under Misc->Boot->ShowPicker (change to NO).
+  - **Remember to keep an USB copy of your EFI folder.** Normally I use one pen drive for tests, one pen drive with a working OpenCore version + macOS installer and last stable version on my SSD EFI Folder.
 
 ### Updating from OpenCore 0.6.5 and below to 0.6.6 and above
 
 If you are updating OpenCore fom 0.6.5 and below to 0.6.6 and above, some extra steps need to be made in order to boot. OpenCore is now standalone and don't use Bootstrap.efi anymore. Also Bootstrap.efi has been replaced with LauncherOption. Check [Updating Bootstrap in 0.6.6](https://dortania.github.io/OpenCore-Post-Install/multiboot/bootstrap.html#updating-bootstrap-in-0-6-6) for more information.
 
-Basically you need to reset NVRAM to erase older boot format in order to load OpenCore. I'm stil tinkering around and will update this part of readme once I'm confident with the steps needed.
+Basically you need to reset NVRAM to erase older boot format in order to load OpenCore. 
 
 ## KNOWN ISSUES
 
