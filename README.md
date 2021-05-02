@@ -71,7 +71,7 @@ Basically you need to reset NVRAM to erase older boot format in order to load Op
 :white_check_mark: Native brightness control (Thanks [@caiomascarin](https://github.com/caiomascarin))   
 :white_check_mark: 144hz display   
 :white_check_mark: Apple Services  
-:white_check_mark: Keyboard with backlight (RGB backlight works, but had to setup at Windows 10 Alienware Command Center. When boot at macOS the config remains, including color. Cannot turn off keyboard backlight in macOS for now.)  
+:white_check_mark: Keyboard with backlight (RGB backlight works, but had to setup at Windows 10 Alienware Command Center. When boot at macOS the config remains, including color. I'm able to work with Alienware Command Center using VMware Fusion to boot Windows 10 partition (as Boot Camp) and connecting Alienware AW-ALC in Virtual Machine -> USB & Bluetooth. Had to reboot a few times in order to work for the first time.  
 :white_check_mark: Trackpad with multitouch gestures  
 :white_check_mark: Speakers  
 :white_check_mark: Microphone  
