@@ -34,6 +34,7 @@ Tested with RTX 2060 and GTX 1660 Ti versions, both [share same hardware specs](
   - Verbose: OpenCore with text only partition picker
   - OpenCanopy: OpenCore with GUI partition picker
   - OpenCanopy AudioDxe: OpenCore with GUI partition picker and boot chime sound on boot
+  - Legacy BOOTx64: Use this if you don't want to change OpenCore entry on BIOS. I recommend using a version without BOOTx64.efi, loading OpenCore.efi directly. **Read section Updating from OpenCore 0.6.8**
 - Open config.plist and make some changes:
   - If you want to enable verbose mode during installation, go to NVRAM->Add->7C436110-AB2A-4BBB-A880-FE41995C9F82, and insert **-v** on **boot-args**. To disable verbose mode, just remove -v parameter.
   - Generate your MacBookPro15,2 serials using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS/) and insert it into your config.plist (under PlatformInfo->Generic). You need to update MLB, SystemSerialNumber and SystemUUID
