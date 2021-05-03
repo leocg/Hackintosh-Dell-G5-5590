@@ -4,9 +4,9 @@
 
 ### Dell G5 5590 A70P/M70P/A80P/M80P [RTX 2060 or GTX 1660 Ti models]
 
-Processor: Core i7-9750H 6C/12T (Coffee Lake Plus / Coffee Lake Refresh) 
+Processor: Core i7-9750H 6C/12T (Coffee Lake Refresh) 
 iGPU: Intel UHD 630 Graphics 
-~~dGPU: nVidia GeForce RTX 2060~~  (not supported)
+dGPU: ~~nVidia GeForce RTX 2060~~  (not supported)
 Display: 15.6 1080p (1920x1080) 144hz  
 Memory: 16GB DDR4 2666MHz (8GBx2)  
 Storage: 512GB Intel NVMe SSD  
@@ -19,12 +19,6 @@ Thunderbolt 3 / Webcam / Microphone / Card Reader
 
 Storage: 1tb SSD (Crucial BX500) (I recommend a second disk to dual boot without issues)  
 Wifi/Bluetooth: Fenvi BCM94360NG (ordered m2 card at aliexpress from Fenvi Store)  
-
-If you like this guide and can help with any value, please buy me a coffee :coffee:
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=N7EY58HHR9RUQ)
-
-
 
 
 
@@ -52,16 +46,35 @@ Tested with RTX 2060 and GTX 1660 Ti versions, both [share same hardware specs](
   - You can also disable OpenCore boot picker under Misc->Boot->ShowPicker (change to NO).
   - **Remember to keep an USB copy of your EFI folder.** Normally I use one pen drive for tests, one pen drive with a working OpenCore version + macOS installer and last stable version on my SSD EFI Folder.
 
-### Updating from OpenCore 0.6.5 and below to 0.6.6 and above
+### Updating from OpenCore 0.6.8
 
 If you are updating OpenCore fom 0.6.5 and below to 0.6.6 and above, some extra steps need to be made in order to boot. OpenCore is now standalone and don't use Bootstrap.efi anymore. Also Bootstrap.efi has been replaced with LauncherOption. Check [Updating Bootstrap in 0.6.6](https://dortania.github.io/OpenCore-Post-Install/multiboot/bootstrap.html#updating-bootstrap-in-0-6-6) for more information.
 
-Basically you need to reset NVRAM to erase older boot format in order to load OpenCore. 
+With these changes, BOOTx64.efi is no longer necessary. This is great news, other OSs will no longer mess with OpenCore by replacing BOOTx64.efi. With OpenCore 0.6.8 I kept BOOTx64.efi. With 0.6.9 release I made some fine tunes and removed the BOOT folder.
+
+In order to boot the new version for the first time, follow the steps below:
+
+- Enter BIOS
+- Go to General -> Boot Sequence
+- Select current OpenCore boot option and click "Delete Boot Option"
+- Click "Add Boot Option"
+- In the first field (Boot Option Name), put the name you want to identify during boot (Ex.: OpenCore)
+- The box in the middle (File System List) show all your partitions. Click on "...". The first partition will appear. Look for an EFI folder in the left. If you don't see it, select another drive on File System selector.
+- If you find an EFI partition, navigate to EFI\OC and select OpenCore.efi. If you don't see the OC folder, select another drive on File System selector. After selecting OpenCore.efi, click Ok.
+- Click OK again to confirm. Check if the File Name points to \EFI\OC\OpenCore.efi and if the correct partition is selected on File System List
+- You will see the OpenCore option at the boot list. You can rearrange and put OpenCore at the top.
+- Click Apply and Exit.
+- Pressing F12 during Dell logo will show OpenCore. Select it to boot.
+- **If you reset NVRAM, the steps above will be erased and you may need to add OpenCore.efi again**
+
+If you don't feel confident to erase BOOTx64.efi, i'm packing an EFI folder with it (EFI Legacy), but recommend you follow the steps above.
+
+
 
 ## KNOWN ISSUES
 
 - Music.app don't work with DRM videos.
-- Sometimes unplugging/replugging quickly causes laptop to crash. To avoid this issue, put laptop to sleep before plug or unplug the power chord.
+- Sometimes unplugging/replugging quickly causes laptop to crash. To avoid this issue, put laptop to sleep before plug or unplug the power chord. I'm revisiting all ACPI settings, but no luck so far.
 
 
 
@@ -89,7 +102,25 @@ Basically you need to reset NVRAM to erase older boot format in order to load Op
 
 
 
+If you like this guide and want to help with any value, please buy me a coffee :coffee:
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=N7EY58HHR9RUQ)
+
+
+
 ## CHANGELOG
+
+**May 03 2021** (v2.6)
+
+- Updated to OpenCore 0.6.9 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/05/03/acidanthera-may.html). 
+- Removed BOOTx64.efi from EFI folder. I put a "legacy" EFI folder with BOOT available
+- Cleaned up some unnecessary framebuffer patches
+- Kexts_Extra folder (containing CPUFriendFriend profiles) inside OC moved to UTIL folder. If you want a different profile, just replace CPUFriendDataProvider.kext inside OC/Kexts
+- Removed some unnecessary old stuff in UTIL folder
+- Remove some unnecessary kexts
+- Made some changes on ACPI patches
+- Include information about upgrade OC and run without BOOTx64.efi
+- Update USBPorts.kext with Thunderbolt 3 ports
 
 **April 28 2021** (v2.5.3)
 
