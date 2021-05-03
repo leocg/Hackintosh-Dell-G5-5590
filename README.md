@@ -29,6 +29,36 @@ Tested with RTX 2060 and GTX 1660 Ti versions, both [share same hardware specs](
 ### BIOS VERSION: Tested with **1.13.2** and **1.14.0** (Check your BIOS version before anything)
 
 - Read [official guide](https://dortania.github.io/OpenCore-Install-Guide/) to understand stuff, not needed, but it's nice to understand what you're doing
+
+
+
+#### BIOS SETUP:
+
+- General -> Advanced Boot Options -> Uncheck "Enable Legacy Options ROMs"
+- General -> UEFI Boot Path Security -> Check "Never"
+- System Configuration -> Integrated NIC -> Uncheck "Enable UEFI Network Stack". Check option "Disabled"
+- System Configuration -> SATA Operation -> Check "AHCI"
+- System Configuration -> SMART Reporting -> Check "Enable SMART Reporting"
+- System Configuration -> USB Configuration -> Check "Enable USB Boot Support" and "Enable External USB Port"
+- System Configuration -> Thunderbolt Adapter Configuration -> Check "Enable Thunderbolt Technology Support" and "Security Level - No Security"
+- System Configuration -> Thunderbolt Auto Switch -> Uncheck "Auto Switch" and Check "BIOS Assist Enumeration"
+- System Configuration -> USB Power Share -> Uncheck "Enable USB PowerShare"
+- Security -> Computrace -> Check "Deactivate"
+- Secure Boot -> Secure Boot Enable -> Uncheck "Secure Boot Enable"
+- Intel Software Guard Extensions -> Intel SGX Enable -> Check "Disabled"
+- Performance -> Intel Speedstep -> Check "Enable Intel SpeedStep"
+- Performance -> C-States Control -> Check "C states"
+- Performance -> Intel TurboBoost -> Check "Enable Intel TurboBoost"
+- Performance -> HyperThread control -> Check "Enable"
+- Power Management -> Enable Intel Speed Shift Technology -> Check "Enable Intel Speed Shift Technology"
+- Power Management -> USB Wake Support -> Uncheck "Enable USB Wake Support"
+- Virtualization Support -> Virtualization -> Check "Enable Intel Virtualization Technology"
+- Virtualization Support -> VT for Direct I/O -> Uncheck "Enable VT for Direct IO"
+
+
+
+#### OPENCORE SETUP:
+
 - Choose EFI folder:
   - Debug: OpenCore will load in debug mode and print every step on screen and on file (located on EFI partition of USB disk)
   - Verbose: OpenCore with text only partition picker
@@ -118,10 +148,11 @@ If you like this guide and want to help with any value, please buy me a coffee :
 - Cleaned up some unnecessary framebuffer patches
 - Kexts_Extra folder (containing CPUFriendFriend profiles) inside OC moved to UTIL folder. If you want a different profile, just replace CPUFriendDataProvider.kext inside OC/Kexts
 - Removed some unnecessary old stuff in UTIL folder
-- Remove some unnecessary kexts
+- Removed some unnecessary kexts
 - Made some changes on ACPI patches
-- Include information about upgrade OC and run without BOOTx64.efi
-- Update USBPorts.kext with Thunderbolt 3 ports
+- Add information about upgrade OC and run without BOOTx64.efi
+- Updated USBPorts.kext with Thunderbolt 3 ports
+- Add BIOS setup options
 
 **April 28 2021** (v2.5.3)
 
