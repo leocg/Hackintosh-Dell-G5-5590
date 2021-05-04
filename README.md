@@ -36,7 +36,7 @@ Tested with RTX 2060 and GTX 1660 Ti versions, both [share same hardware specs](
 
 - General -> Advanced Boot Options -> Uncheck "Enable Legacy Options ROMs"
 - General -> UEFI Boot Path Security -> Check "Never"
-- System Configuration -> Integrated NIC -> Uncheck "Enable UEFI Network Stack". Check option "Disabled"
+- System Configuration -> Integrated NIC -> Uncheck "Enable UEFI Network Stack". Check option "Enabled"
 - System Configuration -> SATA Operation -> Check "AHCI"
 - System Configuration -> SMART Reporting -> Check "Enable SMART Reporting"
 - System Configuration -> USB Configuration -> Check "Enable USB Boot Support" and "Enable External USB Port"
@@ -67,7 +67,8 @@ Tested with RTX 2060 and GTX 1660 Ti versions, both [share same hardware specs](
   - Legacy BOOTx64: Use this if you don't want to change OpenCore entry on BIOS. I recommend using a version without BOOTx64.efi, loading OpenCore.efi directly. **Read section Updating from OpenCore 0.6.8**
 - Open config.plist and make some changes:
   - If you want to enable verbose mode during installation, go to NVRAM->Add->7C436110-AB2A-4BBB-A880-FE41995C9F82, and insert **-v** on **boot-args**. To disable verbose mode, just remove -v parameter.
-  - Generate your MacBookPro15,2 serials using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS/) and insert it into your config.plist (under PlatformInfo->Generic). You need to update MLB, SystemSerialNumber and SystemUUID
+  - Generate your ~~MacBookPro15,2~~ **MacBookPro16,1** serials using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS/) and insert it into your config.plist (under PlatformInfo->Generic). You need to update MLB, SystemSerialNumber and SystemUUID. 
+    * With Version 3.0 the issue with external monitor only working with 15,2 SMBIOS was resolved, now I'm using 16,1 SMBIOS, this one have exactly the same CPU as ours.
   - It's recommended to [disable CFG Lock in bios using MobGrubShell](https://dortania.github.io/OpenCore-Post-Install/misc/msr-lock.html). If you disabled it, don't change the lines below. In case you don't want to mess with it, you have to change 2 properties under Kernel->Quirks:
     - AppleCpuPmCfgLock to **YES** or **1** 
     - AppleXcpmCfgLock to **YES** or **1**
@@ -105,7 +106,7 @@ If you don't feel confident to erase BOOTx64.efi, i'm packing an EFI folder with
 ## KNOWN ISSUES
 
 - Music.app don't work with DRM videos.
-- Sometimes unplugging/replugging quickly causes laptop to crash. To avoid this issue, put laptop to sleep before plug or unplug the power chord. I'm revisiting all ACPI settings, but no luck so far.
+- ~~Sometimes unplugging/replugging quickly causes laptop to crash. To avoid this issue, put laptop to sleep before plug or unplug the power chord. I'm revisiting all ACPI settings, but no luck so far.~~ **FIXED WITH VERSION 3.0**
 
 
 
@@ -140,6 +141,13 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 
 ## CHANGELOG
+
+**MAY 04 2021** (v3.0)
+
+- Rebuild EFI from the ground up with latest Dortania documentation, creating manually all ACPI patches.
+- Much cleaner EFI with only required files. I'm looking into issues, but for now everything seems ok. Open an Issue if you run into any problem.
+- Fixed freeze issues when plugging/unplugging power adapter
+- Fixed external monitor running with MacBookPro16,1 SMBIOS
 
 **May 03 2021** (v2.6)
 
