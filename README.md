@@ -105,7 +105,7 @@ If you don't feel confident to erase BOOTx64.efi, i'm packing an EFI folder with
 ## KNOWN ISSUES
 
 - Music.app don't work with DRM videos.
-- ~~Sometimes unplugging/replugging quickly causes laptop to crash. To avoid this issue, put laptop to sleep before plug or unplug the power chord. I'm revisiting all ACPI settings, but no luck so far.~~ **FIXED WITH VERSION 3.0**
+- Sometimes unplugging/replugging quickly causes laptop to crash. To avoid this issue, put laptop to sleep before plug or unplug the power chord. I'm revisiting all ACPI settings, but no luck so far.
 
 
 
