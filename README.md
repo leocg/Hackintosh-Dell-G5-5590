@@ -116,17 +116,10 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 ## CHANGELOG
 
-**JUNE 14 2021** (v3.1)
+**JUNE 14 2021** (v2.7)
 
 - Updated to OpenCore 0.7.0 and corresponding kexts https://dortania.github.io/hackintosh/updates/2021/06/07/acidanthera-june.html). 
 - Found out the cause regarding freeze issues removing power chord, read KNOWN ISSUES for more information.
-
-**MAY 04 2021** (v3.0)
-
-- Rebuild EFI from the ground up with latest Dortania documentation, creating manually all ACPI patches.
-- Much cleaner EFI with only required files. I'm looking into issues, but for now everything seems ok. Open an Issue if you run into any problem.
-- Fixed freeze issues when plugging/unplugging power adapter
-- Put back BOOTx64.efi, you can select OpenCore.efi for but, but kept BOOTx64 in case you prefer the old method.
 
 **May 03 2021** (v2.6)
 
