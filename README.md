@@ -67,7 +67,7 @@ Tested with RTX 2060 and GTX 1660 Ti versions, both [share same hardware specs](
   - Legacy BOOTx64: Use this if you don't want to change OpenCore entry on BIOS. I recommend using a version without BOOTx64.efi, loading OpenCore.efi directly. **Read section Updating from OpenCore 0.6.8**
 - Open config.plist and make some changes:
   - If you want to enable verbose mode during installation, go to NVRAM->Add->7C436110-AB2A-4BBB-A880-FE41995C9F82, and insert **-v** on **boot-args**. To disable verbose mode, just remove -v parameter.
-  - Generate your MacBookPro15,2 serials using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS/) and insert it into your config.plist (under PlatformInfo->Generic). You need to update MLB, SystemSerialNumber and SystemUUID. 
+  - Generate your **MacBookPro15,2** serials using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS/) and insert it into your config.plist (under PlatformInfo->Generic). You need to update MLB, SystemSerialNumber and SystemUUID. 
   - It's recommended to [disable CFG Lock in bios using MobGrubShell](https://dortania.github.io/OpenCore-Post-Install/misc/msr-lock.html). If you disabled it, don't change the lines below. In case you don't want to mess with it, you have to change 2 properties under Kernel->Quirks:
     - AppleCpuPmCfgLock to **YES** or **1** 
     - AppleXcpmCfgLock to **YES** or **1**
@@ -77,35 +77,10 @@ Tested with RTX 2060 and GTX 1660 Ti versions, both [share same hardware specs](
   - You can also disable OpenCore boot picker under Misc->Boot->ShowPicker (change to NO).
   - **Remember to keep an USB copy of your EFI folder.** Normally I use one pen drive for tests, one pen drive with a working OpenCore version + macOS installer and last stable version on my SSD EFI Folder.
 
-### Updating from OpenCore 0.6.8
-
-If you are updating OpenCore fom 0.6.5 and below to 0.6.6 and above, some extra steps need to be made in order to boot. OpenCore is now standalone and don't use Bootstrap.efi anymore. Also Bootstrap.efi has been replaced with LauncherOption. Check [Updating Bootstrap in 0.6.6](https://dortania.github.io/OpenCore-Post-Install/multiboot/bootstrap.html#updating-bootstrap-in-0-6-6) for more information.
-
-With these changes, BOOTx64.efi is no longer necessary. This is great news, other OSs will no longer mess with OpenCore by replacing BOOTx64.efi. With OpenCore 0.6.8 I kept BOOTx64.efi. With 0.6.9 release I made some fine tunes and removed the BOOT folder.
-
-In order to boot the new version for the first time, follow the steps below:
-
-- Enter BIOS
-- Go to General -> Boot Sequence
-- Select current OpenCore boot option and click "Delete Boot Option"
-- Click "Add Boot Option"
-- In the first field (Boot Option Name), put the name you want to identify during boot (Ex.: OpenCore)
-- The box in the middle (File System List) show all your partitions. Click on "...". The first partition will appear. Look for an EFI folder in the left. If you don't see it, select another drive on File System selector.
-- If you find an EFI partition, navigate to EFI\OC and select OpenCore.efi. If you don't see the OC folder, select another drive on File System selector. After selecting OpenCore.efi, click Ok.
-- Click OK again to confirm. Check if the File Name points to \EFI\OC\OpenCore.efi and if the correct partition is selected on File System List
-- You will see the OpenCore option at the boot list. You can rearrange and put OpenCore at the top.
-- Click Apply and Exit.
-- Pressing F12 during Dell logo will show OpenCore. Select it to boot.
-- **If you reset NVRAM, the steps above will be erased and you may need to add OpenCore.efi again**
-
-If you don't feel confident to erase BOOTx64.efi, i'm packing an EFI folder with it (EFI Legacy), but recommend you follow the steps above.
-
-
-
 ## KNOWN ISSUES
 
 - Music.app don't work with DRM videos.
-- Sometimes unplugging/replugging quickly causes laptop to crash. To avoid this issue, put laptop to sleep before plug or unplug the power chord. I'm revisiting all ACPI settings, but no luck so far.
+- Sometimes unplugging/replugging quickly causes laptop to crash. To avoid this issue, put laptop to sleep before plug or unplug the power chord. I'm revisiting all ACPI settings, but no luck so far.   ***Update: I found the issue regarding freeze issues. It's related to turning off dGPU. Leaving dGPU enabled, the freeze issue is gone. Activating it with any method (-wegnogpu boot flag, optimus method, device method in config.plist, etc) will cause the freeze. I'm leaving dGPU disabled because battery life goes down to 30 minutes with it enabled, but you can disable it removing SSDT-dGPU-Off.aml from ACPI in config.plist. I'm looking for solutions regarding this issue.** 
 
 
 
@@ -140,6 +115,18 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 
 ## CHANGELOG
+
+**JUNE 14 2021** (v3.1)
+
+- Updated to OpenCore 0.7.0 and corresponding kexts https://dortania.github.io/hackintosh/updates/2021/06/07/acidanthera-june.html). 
+- Found out the cause regarding freeze issues removing power chord, read KNOWN ISSUES for more information.
+
+**MAY 04 2021** (v3.0)
+
+- Rebuild EFI from the ground up with latest Dortania documentation, creating manually all ACPI patches.
+- Much cleaner EFI with only required files. I'm looking into issues, but for now everything seems ok. Open an Issue if you run into any problem.
+- Fixed freeze issues when plugging/unplugging power adapter
+- Put back BOOTx64.efi, you can select OpenCore.efi for but, but kept BOOTx64 in case you prefer the old method.
 
 **May 03 2021** (v2.6)
 
