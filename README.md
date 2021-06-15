@@ -80,7 +80,7 @@ Tested with RTX 2060 and GTX 1660 Ti versions, both [share same hardware specs](
 ## KNOWN ISSUES
 
 - Music.app don't work with DRM videos.
-- Sometimes unplugging/replugging quickly causes laptop to crash. To avoid this issue, put laptop to sleep before plug or unplug the power chord. I'm revisiting all ACPI settings, but no luck so far.   ***Update: I found the issue regarding freeze issues. It's related to turning off dGPU. Leaving dGPU enabled, the freeze issue is gone. Activating it with any method (-wegnogpu boot flag, optimus method, device method in config.plist, etc) will cause the freeze. I'm leaving dGPU disabled because battery life goes down to 30 minutes with it enabled, but you can disable it removing SSDT-dGPU-Off.aml from ACPI in config.plist. I'm looking for solutions regarding this issue.** 
+- Sometimes unplugging/replugging quickly causes laptop to crash. To avoid this issue, put laptop to sleep before plug or unplug the power chord. I'm revisiting all ACPI settings, but no luck so far.   ***Update: I found the cause. It's related to turning off dGPU. Leaving dGPU enabled, the issue is gone. Activating it with any method (-wegnogpu boot flag, optimus method, device method in config.plist, etc) will cause the freeze. I'm leaving dGPU disabled because battery life goes down to 30 minutes with it enabled, but you can disable it removing SSDT-dGPU-Off.aml from ACPI in config.plist. I'm looking for solutions to disable dGPU without freezing after unplug.** 
 
 
 
