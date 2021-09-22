@@ -138,6 +138,10 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 ## CHANGELOG
 
+**SEPTEMBER 22 2021** (v2.10)
+
+- Updated to OpenCore 0.7.3 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/09/06/acidanthera-september.html). 
+
 **SEPTEMBER 22 2021** (v2.9)
 
 - Updated to OpenCore 0.7.2 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/08/02/acidanthera-august.html). 
