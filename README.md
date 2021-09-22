@@ -77,6 +77,28 @@ Tested with RTX 2060 and GTX 1660 Ti versions, both [share same hardware specs](
   - You can also disable OpenCore boot picker under Misc->Boot->ShowPicker (change to NO).
   - **Remember to keep an USB copy of your EFI folder.** Normally I use one pen drive for tests, one pen drive with a working OpenCore version + macOS installer and last stable version on my SSD EFI Folder.
 
+#### UNDERVOLTING:
+
+The i7 9750h CPU supports undervolting, but it's not enabled by default in BIOS. In order to enable, you'll need to follow some steps, pretty similar to disable CFG Lock:
+
+1. Format a USB drive to FAT32 on a GUID partition map.
+2. Make a folder called EFI in the root of the USB
+3. Inside this, make a folder called BOOT
+4. Download [this](https://github.com/datasone/grub-mod-setup_var/releases/download/1.1/modGRUBShell.efi) file and place it inside BOOT
+5. Rename this file to bootx64.efi
+6. Boot into the USB drive (spam F12 at the BIOS prompt and select your USB drive)
+7. Once this has loaded, enter **setup_var_3 0x660 0x00** to disable overclocking lock
+8. Enter **reboot** to exit and restart your computer.
+
+Now you have undervolting enabled. Next step: download VoltageShit (https://github.com/sicreative/VoltageShift) and extract it. I place the voltageshift folder inside Applications folder.
+
+Next make some tests in order to define the best frequency for you. I got a very stable setup using -225mv CPU voltage offset ans -125mv on CPU Cache voltage offset. Start with -125mv in both and then try to rise CPU voltage offset to -225mv:
+
+- Go to VoltageShift folder using terminal, in my case: `cd /Applications/voltageshift`
+- Set the desired offset, example: `./voltageshift offset -125 0 -125` (first value is CPU, second value is GPU and third value is CPU Cache). You can try other values for best stability, starting with lower values and going up. If you set to high your laptop may freeze. In this case, hard restart and try again with lower values. Ideally you shoud start with `./voltageshift offset -25 0 -25` and step up 25mv each time. CPU voltage offset can be more than CPU cache offset. I read in a forum people getting good results with -225mv CPU and -125mv CPU cache. I got good results with it too and I'm using it for about a month without issues (I run -125mv CPU and -125mv CPU cache for a couple of months without issues too).
+- After you test throughfuly the settings and are comfortable with System stability, you can apply the launchd in order to set undervolt on boot: `./voltageshift buildlaunchd -225 0 -125` (remember to set the CPU and CPU cache values with your desired values)
+- There's some other parameters you can include on buildlaunchd, like run the utility every X minutes if your system is disabling undervolting after sleep, for example. I'm only running on boot and didn't have any issues so far. Read more at https://github.com/sicreative/VoltageShift 
+
 ## KNOWN ISSUES
 
 - Music.app don't work with DRM videos.
@@ -116,9 +138,14 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 ## CHANGELOG
 
+**SEPTEMBER 22 2021** (v2.8)
+
+- Updated to OpenCore 0.7.1 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/07/05/acidanthera-july.html). 
+- Added VoltageShift (https://github.com/sicreative/VoltageShift) to undervolt CPU. Read **Undervolting** section if you want to undervolt your CPU.
+
 **JUNE 14 2021** (v2.7)
 
-- Updated to OpenCore 0.7.0 and corresponding kexts https://dortania.github.io/hackintosh/updates/2021/06/07/acidanthera-june.html). 
+- Updated to OpenCore 0.7.0 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/06/07/acidanthera-june.html). 
 - Found out the cause regarding freeze issues removing power chord, read KNOWN ISSUES for more information.
 
 **May 03 2021** (v2.6)
