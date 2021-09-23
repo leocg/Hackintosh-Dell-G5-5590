@@ -374,11 +374,9 @@ Fake ethernet to make iCloud work, fixed battery status.
 
 First version fast and functional. AML files fixed to match notebook specs. Still working with drivers, need to bring back battery status.
 
-**July 07 2020 - Initial**
+**July 07 2020**
 
-
-
-
+Initial working version.
 
 
 
@@ -386,46 +384,4 @@ First version fast and functional. AML files fixed to match notebook specs. Stil
 
 This is my "Hackintosh Diary", will be using it to maintain a triple boot Dell G5 5590 a80p between macOS, Arch Linux and Windows.  
 
-Don't directly use my EFI folder, your computer won't boot cause it has CFG Lock disabled and other post install stuff.
-
-Vanilla Boot could be accomplished using OPENCORE USB BOOT folder. Use this folder to make a bootable USB disk with macOS Catalina (tested with 10.5.5).
-
 Used [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) from [Dortania](https://dortania.github.io/), but laptop and desktop guide was merged into [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/).
-
-Most work is done post installation, be prepared to read a lot. CFG Lock is difficult to understand but very simple to execute. Disabling CFG Lock and dGPU using [Optimus Method](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/laptop-disable.html#optimus-method) has major impact on battery life.
-
-Follow [Vanilla Laptop Guide](https://dortania.github.io/vanilla-laptop-guide/) and use MacBookPro16,1 SMBIOS (remember to insert your generated data at platform info section). Setup config.plist using [Coffee Lake Plus](https://dortania.github.io/vanilla-laptop-guide/OpenCore/config-laptop.plist/coffee-lake-plus.html). Read every guide very carefully BEFORE start and know what you're going to do beforehand.
-
-## Config
-
-**ACPI changes:**
-
-- SSNC-PLUG - CPU0 into PP00 -> Processor ID on this machine is PP00
-
-**DELL SPECIFICS config.plist:**
-
-- UpdateSMBIOSMode = Custom
-- CustomSMBIOSGuid = True
-- Audio layout-id = 15 (other channels worked, but 15 offered better stability and sound quality overall)
-
-**Patching CFG Lock**
-
-- Download BIOS from Dell website (version must be the same, variable can change after updates). 
-- Dump bios with DecompNewDell.py (used Python3)
-- Open dumped bios with UEFITool
-- Search for "CFG Lock, VarStoreInfo (VarOffset/VarName)". Variable name come just after (in my case, using BIOS 1.13.2, was 0x5C4)
-
-`One Of: CFG Lock, VarStoreInfo (VarOffset/VarName): 0x5C4, VarStore: 0x1 [...]
-
-The steps above I followed to find the correct CFG Lock variable name. After that, simply boot into Modified GRUB Shell and change variable from 0x5C4 to 0x00:
-
-- Prepare EFI Boot Disk using [Disabling CFG Lock](https://dortania.github.io/OpenCore-Desktop-Guide/extras/msr-lock#disabling-cfg-lock) instructions and patch using **setup_var_3 0x5C4 0x00**
-
-**If you don't feel confortable messing with bios setting, just change the settings below in your config.plist:**
-
-- AppleCpuPmCfgLock -> YES 
-- AppleXcpmCfgLock -> YES 
-
-**Generating serial numbers:**
-
-Use [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS/) script to generate your device serial number. Put it into PlatformInfo->Generic (MLB, SystemSerialNumber and SystemUUID).
