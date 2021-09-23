@@ -95,7 +95,7 @@ The i7 9750h CPU supports disabling CFG Lock, but it's not disabled by default i
 7. Once this has loaded, enter **setup_var_3 0x5C4 0x00** to disable CFG lock. You can disable Undervolting lock now too, following step 7 from the **UNDERVOLTING** section.
 8. Enter **reboot** to exit and restart your computer.
 
-
+![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/DOCS/CFG-Lock-Disabled.png)
 
 #### UNDERVOLTING (optional):
 
