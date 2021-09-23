@@ -94,6 +94,11 @@ The i7 9750h CPU supports disabling CFG Lock, but it's not disabled by default i
 6. Boot into the USB drive (spam F12 at the BIOS prompt and select your USB drive)
 7. Once this has loaded, enter **setup_var_3 0x5C4 0x00** to disable CFG lock. You can disable Undervolting lock now too, following step 7 from the **UNDERVOLTING** section.
 8. Enter **reboot** to exit and restart your computer.
+9. You can verify if your CFG Lock is disabled using ControlMsrE2.efi from OpenCore OC/Tools folder. Copy it to your EFI/OC/tools and put the parameters below into your config.plist at Misc -> Tools:
+
+
+
+10. Reboot your laptot and select ControlMsrE2 in the boot picker. If your CFG Lock is successfully disabled, you will see the information "This firmware has UNLOCKED MSR 0xE2 register!".
 
 ![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/DOCS/CFG-Lock-Disabled-BIOS.png)
 
