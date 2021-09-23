@@ -71,16 +71,14 @@ Tested with RTX 2060 and GTX 1660 Ti versions, both [share same hardware specs](
 - Open config.plist and make some changes:
   - If you want to enable verbose mode during installation, go to NVRAM->Add->7C436110-AB2A-4BBB-A880-FE41995C9F82, and insert **-v** on **boot-args**. To disable verbose mode, just remove -v parameter.
   - Generate your **MacBookPro15,2** serials using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS/) and insert it into your config.plist (under PlatformInfo->Generic). You need to update MLB, SystemSerialNumber and SystemUUID. 
-  - It's recommended to [disable CFG Lock in bios using MobGrubShell](https://dortania.github.io/OpenCore-Post-Install/misc/msr-lock.html). If you disabled it, don't change the lines below. In case you don't want to mess with it, you have to change 2 properties under Kernel->Quirks:
+  - It's recommended to disable CFG Lock. CFG Lock prevents OS X from writing to a certain region in your BIOS. macOS does this for power management and other reasons, and if it can't access it, it will not boot. You can find instructions for disabling at **DISABLING CFG LOCK** section in this document. If you disabled it, don't change the lines below. In case you don't want to mess with it, you have to change 2 properties under Kernel->Quirks in order to boot macOS without disabling it:
     - AppleCpuPmCfgLock to **YES** or **1** 
     - AppleXcpmCfgLock to **YES** or **1**
-    - If you want to disable CFG Lock and don't know how to dump your BIOS, use **setup_var_3 0x5C4 0x00** during the steps of [disabling CFG Lock in bios using MobGrubShell](https://dortania.github.io/OpenCore-Post-Install/misc/msr-lock.html). You can also read DISABLING CFG LOCK section below. **only use it if your BIOS is in version 1.13.2 or 1.14.0, Dell could change this location on future updates.** 
-    - **PLEASE DON'T USE THIS COMMAND IF YOU DON'T HAVE A DELL G5 5590 WITH THE SPECS LISTED ABOVE, YOU COULD BRICK YOUR MACHINE.**
-  - After installation you can make the default OpenCore selection by pressing Ctrl+Enter on the partition you want
-  - You can also disable OpenCore boot picker under Misc->Boot->ShowPicker (change to NO).
-  - **Remember to keep an USB copy of your EFI folder.** Normally I use one pen drive for tests, one pen drive with a working OpenCore version + macOS installer and last stable version on my SSD EFI Folder.
+  - After installation you can make the default OpenCore selection by pressing Ctrl+Enter on the partition you want in the OpenCore boot picker.
+  - You can also disable OpenCore boot picker under Misc->Boot->ShowPicker (change to NO). Only do this if you keep an extra copy of OpenCore with boot picker enabled in a USB Drive in case you need to use the OpenCore interface.
+  - **Remember to keep an USB copy of your EFI folder.** Normally I use one pen drive for tests, one pen drive with a working OpenCore version + macOS installer in case I need to do some recovery and stable version on my SSD EFI Folder.
 
-
+![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/DOCS/CFG%20Lock.png)
 
 
 
