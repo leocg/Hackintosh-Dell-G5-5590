@@ -22,7 +22,7 @@ Wifi/Bluetooth: Fenvi BCM94360NG (ordered m2 card at aliexpress from Fenvi Store
 
 
 
-
+![Geekbench 5 results with macOS 11.6](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%20September%202021%20macOS%2011.6.png)
 
 
 
