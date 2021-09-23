@@ -103,6 +103,8 @@ Next make some tests in order to define the best frequency for you. I got a very
 - After you test throughfuly the settings and are comfortable with System stability, you can apply the launchd in order to set undervolt on boot: `./voltageshift buildlaunchd -225 0 -125` (remember to set the CPU and CPU cache values with your desired values)
 - There's some other parameters you can include on buildlaunchd, like run the utility every X minutes if your system is disabling undervolting after sleep, for example. I'm only running on boot and didn't have any issues so far. Read more at https://github.com/sicreative/VoltageShift 
 
+![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/e4dd84265ea434a8f0049d8c65d94ba044548a93/UTIL/SCREENSHOTS%20PROOFS/VoltageShift.png)
+
 ## KNOWN ISSUES
 
 - Music.app don't work with DRM videos.
@@ -131,6 +133,38 @@ Next make some tests in order to define the best frequency for you. I got a very
 :white_check_mark: :warning: Apple Communications (Continuity, airdrop, etc) - Using Fenvi BCM94360NG (Original card didn't provide support)  
 :white_check_mark: :warning: Wi-Fi - Using Fenvi BCM94360NG (Original card don't work on macOS)    
 :white_check_mark: :warning: Thunderbolt 3 (can see device in Hackintosh but don't have any Thunderbolt peripheral to test)
+
+
+
+### SCREENSHOTS
+
+#### AirDrop
+
+![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/e4dd84265ea434a8f0049d8c65d94ba044548a93/UTIL/SCREENSHOTS%20PROOFS/AIRDROP.png)
+
+
+
+#### Continuity
+
+![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/e4dd84265ea434a8f0049d8c65d94ba044548a93/UTIL/SCREENSHOTS%20PROOFS/Continuity.png)
+
+
+
+#### Video Acceleration
+
+![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/e4dd84265ea434a8f0049d8c65d94ba044548a93/UTIL/SCREENSHOTS%20PROOFS/HVEC%20Encoding%20Support.png)
+
+
+
+#### iMessage
+
+![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/e4dd84265ea434a8f0049d8c65d94ba044548a93/UTIL/SCREENSHOTS%20PROOFS/iMessage.png)
+
+
+
+#### NMVe Disk Speed Test
+
+![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/e4dd84265ea434a8f0049d8c65d94ba044548a93/UTIL/SCREENSHOTS%20PROOFS/NVMe%20DISK%20Speed%20Test.png)
 
 
 
