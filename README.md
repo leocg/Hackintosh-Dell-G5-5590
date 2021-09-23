@@ -63,25 +63,43 @@ Tested with RTX 2060 and GTX 1660 Ti versions, both [share same hardware specs](
 
 #### OPENCORE SETUP:
 
-- Choose EFI folder:
-  - Debug: OpenCore will load in debug mode and print every step on screen and on file (located on EFI partition of USB disk)
-  - Verbose: OpenCore with text only partition picker
+- Download latest release from [Releases page](https://github.com/leocg/Hackintosh-Dell-G5-5590/releases)
+- Choose the right EFI folder for you:
+  - OpenCanopy AudioDxe: OpenCore with GUI partition picker and boot chime sound. I use this version.
   - OpenCanopy: OpenCore with GUI partition picker
-  - OpenCanopy AudioDxe: OpenCore with GUI partition picker and boot chime sound on boot
-  - Legacy BOOTx64: Use this if you don't want to change OpenCore entry on BIOS. I recommend using a version without BOOTx64.efi, loading OpenCore.efi directly. **Read section Updating from OpenCore 0.6.8**
+  - Verbose: OpenCore with text only partition picker
 - Open config.plist and make some changes:
   - If you want to enable verbose mode during installation, go to NVRAM->Add->7C436110-AB2A-4BBB-A880-FE41995C9F82, and insert **-v** on **boot-args**. To disable verbose mode, just remove -v parameter.
   - Generate your **MacBookPro15,2** serials using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS/) and insert it into your config.plist (under PlatformInfo->Generic). You need to update MLB, SystemSerialNumber and SystemUUID. 
   - It's recommended to [disable CFG Lock in bios using MobGrubShell](https://dortania.github.io/OpenCore-Post-Install/misc/msr-lock.html). If you disabled it, don't change the lines below. In case you don't want to mess with it, you have to change 2 properties under Kernel->Quirks:
     - AppleCpuPmCfgLock to **YES** or **1** 
     - AppleXcpmCfgLock to **YES** or **1**
-    - If you want to disable CFG Lock and don't know how to dump your BIOS, use **setup_var_3 0x5C4 0x00** during the steps of [disabling CFG Lock in bios using MobGrubShell](https://dortania.github.io/OpenCore-Post-Install/misc/msr-lock.html). **only use it if your BIOS is in version 1.13.2 or 1.14.0, Dell could change this location on future updates.** 
+    - If you want to disable CFG Lock and don't know how to dump your BIOS, use **setup_var_3 0x5C4 0x00** during the steps of [disabling CFG Lock in bios using MobGrubShell](https://dortania.github.io/OpenCore-Post-Install/misc/msr-lock.html). You can also read DISABLING CFG LOCK section below. **only use it if your BIOS is in version 1.13.2 or 1.14.0, Dell could change this location on future updates.** 
     - **PLEASE DON'T USE THIS COMMAND IF YOU DON'T HAVE A DELL G5 5590 WITH THE SPECS LISTED ABOVE, YOU COULD BRICK YOUR MACHINE.**
   - After installation you can make the default OpenCore selection by pressing Ctrl+Enter on the partition you want
   - You can also disable OpenCore boot picker under Misc->Boot->ShowPicker (change to NO).
   - **Remember to keep an USB copy of your EFI folder.** Normally I use one pen drive for tests, one pen drive with a working OpenCore version + macOS installer and last stable version on my SSD EFI Folder.
 
-#### UNDERVOLTING:
+
+
+
+
+#### DISABLING CFG LOCK (optional):
+
+The i7 9750h CPU supports disabling CFG Lock, but it's not disabled by default in BIOS. In order to disable, you'll need to follow some steps:
+
+1. Format a USB drive to FAT32 on a GUID partition map.
+2. Make a folder called EFI in the root of the USB
+3. Inside this, make a folder called BOOT
+4. Download [this](https://github.com/datasone/grub-mod-setup_var/releases/download/1.1/modGRUBShell.efi) file and place it inside BOOT
+5. Rename this file to bootx64.efi
+6. Boot into the USB drive (spam F12 at the BIOS prompt and select your USB drive)
+7. Once this has loaded, enter **setup_var_3 0x5C4 0x00** to disable CFG lock. You can disable Undervolting lock now too, following step 7 from the **UNDERVOLTING** section.
+8. Enter **reboot** to exit and restart your computer.
+
+
+
+#### UNDERVOLTING (optional):
 
 The i7 9750h CPU supports undervolting, but it's not enabled by default in BIOS. In order to enable, you'll need to follow some steps, pretty similar to disable CFG Lock:
 
@@ -91,7 +109,7 @@ The i7 9750h CPU supports undervolting, but it's not enabled by default in BIOS.
 4. Download [this](https://github.com/datasone/grub-mod-setup_var/releases/download/1.1/modGRUBShell.efi) file and place it inside BOOT
 5. Rename this file to bootx64.efi
 6. Boot into the USB drive (spam F12 at the BIOS prompt and select your USB drive)
-7. Once this has loaded, enter **setup_var_3 0x660 0x00** to disable overclocking lock
+7. Once this has loaded, enter **setup_var_3 0x660 0x00** to disable overclocking lock. You can disable CFG Lock now too, following step 7 from the **DISABLING CFG LOCK** section.
 8. Enter **reboot** to exit and restart your computer.
 
 Now you have undervolting enabled. Next step: download VoltageShit (https://github.com/sicreative/VoltageShift) and extract it. I place the voltageshift folder inside Applications folder.
