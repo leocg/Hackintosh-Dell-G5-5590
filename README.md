@@ -158,7 +158,7 @@ Next make some tests in order to define the best frequency for you. I got a very
 
 #### iMessage
 
-![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/e4dd84265ea434a8f0049d8c65d94ba044548a93/UTIL/SCREENSHOTS%20PROOFS/iMessage.png)
+![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/iMessage%20Working.png)
 
 
 
