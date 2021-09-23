@@ -96,7 +96,7 @@ The i7 9750h CPU supports disabling CFG Lock, but it's not disabled by default i
 8. Enter **reboot** to exit and restart your computer.
 9. You can verify if your CFG Lock is disabled using ControlMsrE2.efi from OpenCore OC/Tools folder. Copy it to your EFI/OC/tools and put the parameters below into your config.plist at Misc -> Tools:
 
-
+![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/DOCS/ControlMsrE2.png)
 
 10. Reboot your laptot and select ControlMsrE2 in the boot picker. If your CFG Lock is successfully disabled, you will see the information "This firmware has UNLOCKED MSR 0xE2 register!".
 
@@ -196,6 +196,10 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 
 ## CHANGELOG
+
+**SEPTEMBER 23 2021**
+
+- Updated guide with new information and screenshots.
 
 **SEPTEMBER 22 2021** (v2.10)
 
