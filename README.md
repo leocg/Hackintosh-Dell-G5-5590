@@ -4,21 +4,22 @@
 
 ### Dell G5 5590 A70P/M70P/A80P/M80P [RTX 2060 or GTX 1660 Ti models]
 
-Processor: Core i7-9750H 6C/12T (Coffee Lake Refresh) 
-iGPU: Intel UHD 630 Graphics 
-dGPU: ~~nVidia GeForce RTX 2060~~  (not supported)
-Display: 15.6 1080p (1920x1080) 144hz  
-Memory: 16GB DDR4 2666MHz (8GBx2)  
-Storage: 512GB Intel NVMe SSD  
-Audio: Realtek ALC3204-CG (ALC236)  
-Wifi/Bluetooth: ~~Qualcomm QCA61x4A (DW1820)~~ (not supported, replaced with card described below:)
-Ethernet: Killer GB E2500V2 10/100/1000 Mbps  
-Thunderbolt 3 / Webcam / Microphone / Card Reader    
+| Component      | Description                                                  |
+| -------------- | ------------------------------------------------------------ |
+| Processor      | Core i7-9750H 6C/12T (Coffee Lake Refresh)                   |
+| iGPU           | Intel UHD 630 Graphics                                       |
+| dGPU           | ~~nVidia GeForce RTX 2060~~  (not supported)                 |
+| Display        | 15.6 1080p (1920x1080) 144hz                                 |
+| Memory         | 16GB DDR4 2666MHz (8GBx2)                                    |
+| Storage        | 512GB Intel NVMe SSD                                         |
+| Audio          | Realtek ALC3204-CG (ALC236)                                  |
+| Wifi/Bluetooth | ~~Qualcomm QCA61x4A (DW1820)~~ (wifi not supported / bluetooth supported, replaced with card described in next table) |
+| Ethernet       | Killer GB E2500V2 10/100/1000 Mbps                           |
 
-##### EXTRA HARDWARE USED:
-
-Storage: 1tb SSD (Crucial BX500) (I recommend a second disk to dual boot without issues)  
-Wifi/Bluetooth: Fenvi BCM94360NG (ordered m2 card at aliexpress from Fenvi Store)  
+| Extra Hardware    | Description                                                  |
+| ----------------- | ------------------------------------------------------------ |
+| SSD in second bay | 1tb SSD (Crucial BX500)                                      |
+| Wifi/Bluetooth    | Fenvi BCM94360NG (ordered m2 card at aliexpress from Fenvi Store) |
 
 
 
@@ -128,7 +129,7 @@ Next make some tests in order to define the best frequency for you. I got a very
 
 ## KNOWN ISSUES
 
-- Music.app don't work with DRM videos.
+- Some DRM videos won't work. Currently you can view videos encoded with **FairPlay 2.x/3.x**.
 - External mic not working (only work with bluetooth headset). Already tried to use ComboJack without success, I'm looking for solutions.
 - Sometimes unplugging/replugging quickly causes laptop to crash. To avoid this issue, put laptop to sleep before plug or unplug the power chord. I'm revisiting all ACPI settings, but no luck so far.   *Update: I found the cause. It's related to turning off dGPU. Leaving dGPU enabled, the issue is gone. Activating it with any method (-wegnogpu boot flag, optimus method, device method in config.plist, etc) will cause the freeze. I'm leaving dGPU disabled because battery life goes down to 30 minutes with it enabled, but you can disable it removing SSDT-dGPU-Off.aml from ACPI in config.plist. I'm looking for solutions to disable dGPU without freezing after unplug. 
 
@@ -139,6 +140,7 @@ Next make some tests in order to define the best frequency for you. I got a very
 :white_check_mark: iGPU Acceleration    
 :white_check_mark: Native brightness control (Thanks [@caiomascarin](https://github.com/caiomascarin))   
 :white_check_mark: 144hz display   
+:white_check_mark: External monitor using USB-C to HDMI adapter. Other ports (HDMI and Mini Display Port) won't work, they're liked to nVidia GPU   
 :white_check_mark: Apple Services  
 :white_check_mark: Keyboard with backlight (RGB backlight works, but had to setup at Windows 10 Alienware Command Center. When boot at macOS the config remains, including color. I'm able to work with Alienware Command Center using VMware Fusion to boot Windows 10 partition (as Boot Camp) and connecting Alienware AW-ALC in Virtual Machine -> USB & Bluetooth. Had to reboot a few times in order to work for the first time.  
 :white_check_mark: Trackpad with multitouch gestures  
@@ -152,9 +154,17 @@ Next make some tests in order to define the best frequency for you. I got a very
 :white_check_mark: Bluetooth - Using Fenvi BCM94360NG (Original card worked with bluetooth out of box too)  
 :white_check_mark: USB-C video out  (using generic USB-C to HDMI adapter)  
 :white_check_mark: Ethernet (Thanks [@radaelilucca](https://github.com/radaelilucca))  
+:white_check_mark: FairPlay 2.x/3.x DRM videos
 :white_check_mark: :warning: Apple Communications (Continuity, airdrop, etc) - Using Fenvi BCM94360NG (Original card didn't provide support)  
 :white_check_mark: :warning: Wi-Fi - Using Fenvi BCM94360NG (Original card don't work on macOS)    
 :white_check_mark: :warning: Thunderbolt 3 (can see device in Hackintosh but don't have any Thunderbolt peripheral to test)
+
+## NOT WORKING (likely won't work anytime soon)
+
+:x: nVidia GPU
+:x: HDMI and Mini Display Port video out (linked to nVidia GPU. Use USB-C to HDMI adapter to use external display)
+:x: WiFi Qualcomm QCA61x4A (DW1820). Replaced mine with Fenvi BCM94360NG
+:x: FairPlay 1.x and FairPlay 4.x DRM videos
 
 
 
@@ -197,6 +207,12 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 
 ## CHANGELOG
+
+**OCTOBER 06 2021** (v2.11)
+
+- Updated to OpenCore 0.7.4 and corresponding kexts (Dortania didn't post an update article this month, so no link here).
+- Updated HfsPlus.efi from OcBinaryData repository 
+- Remade USB mapping with [USBMap](https://github.com/corpnewt/USBMap)
 
 **SEPTEMBER 23 2021**
 
