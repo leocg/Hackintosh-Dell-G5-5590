@@ -210,7 +210,7 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 **OCTOBER 06 2021** (v2.11)
 
-- Updated to OpenCore 0.7.4 and corresponding kexts (Dortania didn't post an update article this month, so no link here).
+- Updated to OpenCore 0.7.4 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/10/07/acidanthera-october.html).
 - Updated HfsPlus.efi from OcBinaryData repository 
 - Remade USB mapping with [USBMap](https://github.com/corpnewt/USBMap)
 
