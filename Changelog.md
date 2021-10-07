@@ -1,4 +1,6 @@
-# CHANGELOG
+# Hackintosh Dell G5 5590 OpenCore Changelog
+
+
 
 **OCTOBER 06 2021** (v2.11)
 
