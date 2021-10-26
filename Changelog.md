@@ -2,6 +2,10 @@
 
 
 
+**OCTOBER 26 2021**
+
+- Updated to macOS Monterey 12.0.1 using software update and latest EFI ([Dell G5 5590 OpenCore 0.7.4](https://github.com/leocg/Hackintosh-Dell-G5-5590/releases/tag/v2.11-OC-0.7.4)).
+
 **OCTOBER 06 2021** (v2.11)
 
 - Updated to OpenCore 0.7.4 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/10/07/acidanthera-october.html).

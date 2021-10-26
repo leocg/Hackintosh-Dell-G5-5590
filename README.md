@@ -23,9 +23,7 @@
 
 
 
-![Geekbench 5 results with macOS 11.6](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%20September%202021%20macOS%2011.6.png)
-
-
+![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%20October%202021%20macOS%2012.0.1.png)
 
 ## INSTALLATION
 
@@ -212,6 +210,10 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 
 ## CHANGELOG
+
+**OCTOBER 26 2021** (v2.11)
+
+- Updated to macOS Monterey 12.0.1 using software update and latest EFI ([Dell G5 5590 OpenCore 0.7.4](https://github.com/leocg/Hackintosh-Dell-G5-5590/releases/tag/v2.11-OC-0.7.4)).
 
 **OCTOBER 06 2021** (v2.11)
 
