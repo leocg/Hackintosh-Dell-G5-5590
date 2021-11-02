@@ -23,6 +23,8 @@
 
 
 
+### Tested with macOS Catalina (since initial release), macOS Big Sur (since v2.0) and macOS Monterey (since v3.0)
+
 ![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%20October%202021%20macOS%2012.0.1.png)
 
 ## INSTALLATION
@@ -211,17 +213,16 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 ## CHANGELOG
 
+**NOVEMBER 02 2021** (v3.0)
+
+- Updated to OpenCore 0.7.5 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/11/01/acidanthera-november.html).
+- Supporting macOS Monterey without issues. You can use software updater from Big Sur to upgrade your machine using [latest EFI](https://github.com/leocg/Hackintosh-Dell-G5-5590/releases).
+
 **OCTOBER 26 2021** (v2.11)
 
 - Updated to macOS Monterey 12.0.1 using software update and latest EFI ([Dell G5 5590 OpenCore 0.7.4](https://github.com/leocg/Hackintosh-Dell-G5-5590/releases/tag/v2.11-OC-0.7.4)).
 
-**OCTOBER 06 2021** (v2.11)
-
-- Updated to OpenCore 0.7.4 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/10/07/acidanthera-october.html).
-- Updated HfsPlus.efi from OcBinaryData repository 
-- Remade USB mapping with [USBMap](https://github.com/corpnewt/USBMap)
-
-View past updates on [Changelog.md](https://github.com/leocg/Hackintosh-Dell-G5-5590/blob/master/Changelog.md)
+**View past updates on [Changelog.md](https://github.com/leocg/Hackintosh-Dell-G5-5590/blob/master/Changelog.md)**
 
 
 

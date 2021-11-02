@@ -2,6 +2,11 @@
 
 
 
+**NOVEMBER 02 2021** (v3.0)
+
+- Updated to OpenCore 0.7.5 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/11/01/acidanthera-november.html).
+- Supporting macOS Monterey without issues. You can use software updater from Big Sur to upgrade your machine using [latest EFI](https://github.com/leocg/Hackintosh-Dell-G5-5590/releases).
+
 **OCTOBER 26 2021**
 
 - Updated to macOS Monterey 12.0.1 using software update and latest EFI ([Dell G5 5590 OpenCore 0.7.4](https://github.com/leocg/Hackintosh-Dell-G5-5590/releases/tag/v2.11-OC-0.7.4)).
