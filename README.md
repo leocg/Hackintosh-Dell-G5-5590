@@ -213,6 +213,11 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 ## CHANGELOG
 
+**DECEMBER 16 2021** (v3.1)
+
+- Updated to OpenCore 0.7.6 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/12/07/acidanthera-december.html).
+- Updated to macOS Monterey 12.1 using software updater without issues with OpenCore 0.7.6.
+
 **NOVEMBER 02 2021** (v3.0)
 
 - Updated to OpenCore 0.7.5 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/11/01/acidanthera-november.html).
