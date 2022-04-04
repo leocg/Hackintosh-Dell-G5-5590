@@ -2,6 +2,10 @@
 
 
 
+**APRIL 04 2022** (v3.2)
+
+- Updated to OpenCore 0.7.9 and corresponding kexts.
+
 **DECEMBER 16 2021** (v3.1)
 
 - Updated to OpenCore 0.7.6 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/12/07/acidanthera-december.html).
