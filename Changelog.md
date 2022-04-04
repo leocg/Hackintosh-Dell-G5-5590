@@ -5,6 +5,7 @@
 **APRIL 04 2022** (v3.2)
 
 - Updated to OpenCore 0.7.9 and corresponding kexts.
+- Updated to macOS Monterey 12.3.1 from 12.1 using software updater without issues with OpenCore 0.7.9.
 
 **DECEMBER 16 2021** (v3.1)
 
