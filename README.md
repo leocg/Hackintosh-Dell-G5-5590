@@ -25,7 +25,7 @@
 
 ### Tested with macOS Catalina (since initial release), macOS Big Sur (since v2.0) and macOS Monterey (since v3.0)
 
-![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%20December%202021%20macOS%2012.1.png)
+![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%20July%202022%20macOS%2012.5.png)
 
 
 
