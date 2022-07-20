@@ -2,6 +2,13 @@
 
 
 
+**JULY 20 2022** (v3.3)
+
+- Updated to OpenCore 0.8.2 and corresponding kexts.
+- Updated to macOS Monterey 12.5 using software updater without issues with OpenCore 0.8.2.
+- Added **ResetNvramEntry.efi** allowing resetting NVRAM from OpenCore 0.8.2 boot picker
+- Added **ToggleSipEntry.efi** allowing enabling/disabling System Integrity Protection (SIP) from OpenCore boot picker
+
 **APRIL 04 2022** (v3.2)
 
 - Updated to OpenCore 0.7.9 and corresponding kexts.

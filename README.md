@@ -215,21 +215,16 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 ## CHANGELOG
 
+**JULY 20 2022** (v3.3)
+
+- Updated to OpenCore 0.8.2 and corresponding kexts.
+- Updated to macOS Monterey 12.5 using software updater without issues with OpenCore 0.8.2.
+- Added **ResetNvramEntry.efi** allowing resetting NVRAM from OpenCore 0.8.2 boot picker
+- Added **ToggleSipEntry.efi** allowing enabling/disabling System Integrity Protection (SIP) from OpenCore boot picker
+
 **APRIL 04 2022** (v3.2)
 
 - Updated to OpenCore 0.7.9 and corresponding kexts.
-
-**DECEMBER 16 2021** (v3.1)
-
-- Updated to OpenCore 0.7.6 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/12/07/acidanthera-december.html).
-- Updated to macOS Monterey 12.1 using software updater without issues with OpenCore 0.7.6.
-
-**NOVEMBER 02 2021** (v3.0)
-
-- Updated to OpenCore 0.7.5 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2021/11/01/acidanthera-november.html).
-- Supporting macOS Monterey without issues. You can use software updater from Big Sur to upgrade your machine using [latest EFI](https://github.com/leocg/Hackintosh-Dell-G5-5590/releases).
-
-
 
 **View past updates on [Changelog.md](https://github.com/leocg/Hackintosh-Dell-G5-5590/blob/master/Changelog.md)**
 
