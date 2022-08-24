@@ -1315,7 +1315,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string></string>
+				<string>-v</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>
@@ -1343,8 +1343,6 @@
 				<string>ForceDisplayRotationInEFI</string>
 			</array>
 		</dict>
-		<key>LegacyEnable</key>
-		<false/>
 		<key>LegacyOverwrite</key>
 		<false/>
 		<key>LegacySchema</key>
@@ -1481,7 +1479,7 @@
 			<key>ResetTrafficClass</key>
 			<false/>
 			<key>SetupDelay</key>
-			<integer>500000</integer>
+			<integer>500</integer>
 		</dict>
 		<key>ConnectDrivers</key>
 		<true/>
@@ -1494,6 +1492,8 @@
 				<string>HfsPlus.efi</string>
 				<key>Comment</key>
 				<string>HFS+ Driver</string>
+				<key>LoadEarly</key>
+				<false/>
 				<key>Enabled</key>
 				<true/>
 			</dict>
@@ -1504,12 +1504,16 @@
 				<string>OpenRuntime.efi</string>
 				<key>Enabled</key>
 				<true/>
+				<key>LoadEarly</key>
+				<false/>
 				<key>Arguments</key>
 				<string></string>
 			</dict>
 			<dict>
 				<key>Enabled</key>
 				<true/>
+				<key>LoadEarly</key>
+				<false/>
 				<key>Comment</key>
 				<string></string>
 				<key>Path</key>
@@ -1524,6 +1528,8 @@
 				<string>ResetNvramEntry.efi</string>
 				<key>Enabled</key>
 				<true/>
+				<key>LoadEarly</key>
+				<false/>
 				<key>Arguments</key>
 				<string></string>
 			</dict>
@@ -1534,6 +1540,8 @@
 				<string>ToggleSipEntry.efi</string>
 				<key>Enabled</key>
 				<true/>
+				<key>LoadEarly</key>
+				<false/>
 				<key>Arguments</key>
 				<string></string>
 			</dict>

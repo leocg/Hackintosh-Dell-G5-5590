@@ -2,6 +2,11 @@
 
 
 
+**AUGUST 23 2022** (v3.4)
+
+- Updated to OpenCore 0.8.3 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2022/08/02/acidanthera-dortania-august.html).
+- Updated to macOS Monterey 12.5.1 using software updater without issues with OpenCore 0.8.3.
+
 **JULY 20 2022** (v3.3)
 
 - Updated to OpenCore 0.8.2 and corresponding kexts.
