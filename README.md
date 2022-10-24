@@ -23,7 +23,15 @@
 
 
 
-### Tested with macOS Catalina (since initial release), macOS Big Sur (since v2.0) and macOS Monterey (since v3.0)
+### Tested with: 
+
+- ### macOS Catalina v10.15 (since initial release)
+
+- ### macOS Big Sur v11 (since v2.0)
+
+- ### macOS Monterey v12 (since v3.0) 
+
+- ### macOS Ventura v13 (since v4.0)
 
 ![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%20July%202022%20macOS%2012.5.png)
 
@@ -215,6 +223,10 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 ## CHANGELOG
 
+**OCTOBER 24 2022** (v4.0)
+
+- Updated to OpenCore 0.8.5 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2022/10/04/acidanthera-october.html).
+- Updated to macOS Ventura 13.0 using software updater without issues with OpenCore 0.8.5.
 
 **AUGUST 23 2022** (v3.4)
 
@@ -227,10 +239,6 @@ If you like this guide and want to help with any value, please buy me a coffee :
 - Updated to macOS Monterey 12.5 using software updater without issues with OpenCore 0.8.2.
 - Added **ResetNvramEntry.efi** allowing resetting NVRAM from OpenCore 0.8.2 boot picker
 - Added **ToggleSipEntry.efi** allowing enabling/disabling System Integrity Protection (SIP) from OpenCore boot picker
-
-**APRIL 04 2022** (v3.2)
-
-- Updated to OpenCore 0.7.9 and corresponding kexts.
 
 **View past updates on [Changelog.md](https://github.com/leocg/Hackintosh-Dell-G5-5590/blob/master/Changelog.md)**
 
