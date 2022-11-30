@@ -47,6 +47,8 @@ Tested with RTX 2060 and GTX 1660 Ti versions, both [share same hardware specs](
 - 1.14.0
 - 1.21.1 (Thanks to **[al-jabirr](https://github.com/al-jabirr)** for testing and pointing out)
 
+Updating BIOS will reset CFG-Lock and Undervolting to factory settings, after update you must follow the steps to disable CFG-Lock and enable Undervolting again.
+
 #### Read [official guide](https://dortania.github.io/OpenCore-Install-Guide/) to understand stuff, not needed, but it's nice to understand what you're doing
 
 #### BIOS SETUP:
