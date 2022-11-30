@@ -41,11 +41,13 @@
 
 Tested with RTX 2060 and GTX 1660 Ti versions, both [share same hardware specs](https://topics-cdn.dell.com/pdf/g-series-15-5590-laptop_setup-guide_pt-br.pdf) (Thunderbolt 3 port)
 
-### BIOS VERSION: Tested with **1.13.2** and **1.14.0** (Check your BIOS version before anything)
+### BIOS VERSION (Check your BIOS version before anything)
 
-- Read [official guide](https://dortania.github.io/OpenCore-Install-Guide/) to understand stuff, not needed, but it's nice to understand what you're doing
+- 1.13.2
+- 1.14.0
+- 1.21.1 (Thanks to **[al-jabirr](https://github.com/al-jabirr)** for testing and pointing out)
 
-
+#### Read [official guide](https://dortania.github.io/OpenCore-Install-Guide/) to understand stuff, not needed, but it's nice to understand what you're doing
 
 #### BIOS SETUP:
 
