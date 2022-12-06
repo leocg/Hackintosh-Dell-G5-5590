@@ -227,6 +227,12 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 ## CHANGELOG
 
+
+
+**DECEMBER 06 2022** 
+
+- Updated to macOS Ventura 13.0.1 using software updater without issues with OpenCore 0.8.5.
+
 **OCTOBER 24 2022** (v4.0)
 
 - Updated to OpenCore 0.8.5 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2022/10/04/acidanthera-october.html).
