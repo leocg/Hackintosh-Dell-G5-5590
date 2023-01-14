@@ -229,6 +229,10 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 
 
+**JANUARY 13 2023** 
+
+- Updated to macOS Ventura 13.1 using software updater without issues with OpenCore 0.8.5.
+
 **DECEMBER 06 2022** 
 
 - Updated to macOS Ventura 13.0.1 using software updater without issues with OpenCore 0.8.5.
@@ -242,13 +246,6 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 - Updated to OpenCore 0.8.3 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2022/08/02/acidanthera-dortania-august.html).
 - Updated to macOS Monterey 12.5.1 using software updater without issues with OpenCore 0.8.3.
-
-**JULY 20 2022** (v3.3)
-
-- Updated to OpenCore 0.8.2 and corresponding kexts.
-- Updated to macOS Monterey 12.5 using software updater without issues with OpenCore 0.8.2.
-- Added **ResetNvramEntry.efi** allowing resetting NVRAM from OpenCore 0.8.2 boot picker
-- Added **ToggleSipEntry.efi** allowing enabling/disabling System Integrity Protection (SIP) from OpenCore boot picker
 
 **View past updates on [Changelog.md](https://github.com/leocg/Hackintosh-Dell-G5-5590/blob/master/Changelog.md)**
 

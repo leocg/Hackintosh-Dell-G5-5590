@@ -2,6 +2,10 @@
 
 
 
+**JANUARY 13 2023** 
+
+- Updated to macOS Ventura 13.1 using software updater without issues with OpenCore 0.8.5.
+
 **DECEMBER 06 2022** 
 
 - Updated to macOS Ventura 13.0.1 using software updater without issues with OpenCore 0.8.5.
