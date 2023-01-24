@@ -141,6 +141,26 @@ Next make some tests in order to define the best frequency for you. I got a very
 
 ![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/e4dd84265ea434a8f0049d8c65d94ba044548a93/UTIL/SCREENSHOTS%20PROOFS/VoltageShift.png)
 
+#### Updating OpenCore:
+
+When a new release is avaliable, just download the zip file and update the new config.plist with your old config.plist values:
+
+**PlatformInfo -> Generic**
+
+- MLB
+- SystemProductName
+- SystemSerialNumber
+- SystemUUID
+
+If you didn't disable CFG LOCK, change the values below (**don't need to change if you disabled CFG LOCK**):
+
+**Kernel -> Quirks**
+
+- AppleCpuPmCfgLock (change the value to 0 or NO, depending on the syntax of your editor. If it's 1 change to 0. If it's YES change to NO)
+- AppleXcpmCfgLock (change the value to 0 or NO, depending on the syntax of your editor. If it's 1 change to 0. If it's YES change to NO)
+
+
+
 ## KNOWN ISSUES
 
 - Some DRM videos won't work. Currently you can view videos encoded with **FairPlay 2.x/3.x**.
@@ -228,6 +248,10 @@ If you like this guide and want to help with any value, please buy me a coffee :
 ## CHANGELOG
 
 
+
+**JANUARY 24 2023** 
+
+- Updated to macOS Ventura 13.2 using software updater without issues with OpenCore 0.8.5.
 
 **JANUARY 13 2023** 
 
