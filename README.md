@@ -151,7 +151,7 @@ Next make some tests in order to define the best frequency for you. I got a very
 
 ![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/e4dd84265ea434a8f0049d8c65d94ba044548a93/UTIL/SCREENSHOTS%20PROOFS/VoltageShift.png)
 
-#### Updating OpenCore:
+## Updating OpenCore:
 
 When a new release is avaliable, just download the zip file and update the new config.plist with your old config.plist values:
 
