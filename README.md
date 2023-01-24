@@ -249,6 +249,10 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 
 
+**JANUARY 24 2023** (v4.1)
+
+- Updated to OpenCore 0.8.8 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2023/01/04/acidanthera-january.html).
+
 **JANUARY 24 2023** 
 
 - Updated to macOS Ventura 13.2 using software updater without issues with OpenCore 0.8.5.
@@ -260,16 +264,6 @@ If you like this guide and want to help with any value, please buy me a coffee :
 **DECEMBER 06 2022** 
 
 - Updated to macOS Ventura 13.0.1 using software updater without issues with OpenCore 0.8.5.
-
-**OCTOBER 24 2022** (v4.0)
-
-- Updated to OpenCore 0.8.5 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2022/10/04/acidanthera-october.html).
-- Updated to macOS Ventura 13.0 using software updater without issues with OpenCore 0.8.5.
-
-**AUGUST 23 2022** (v3.4)
-
-- Updated to OpenCore 0.8.3 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2022/08/02/acidanthera-dortania-august.html).
-- Updated to macOS Monterey 12.5.1 using software updater without issues with OpenCore 0.8.3.
 
 **View past updates on [Changelog.md](https://github.com/leocg/Hackintosh-Dell-G5-5590/blob/master/Changelog.md)**
 
