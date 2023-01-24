@@ -33,7 +33,7 @@
 
 - ### macOS Ventura v13 (since v4.0)
 
-![](https://raw.githubusercontent.com/leocg/Hackintosh-Dell-G5-5590/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%20October%202022%20macOS%2013.0.png)
+![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%202023-01%20macOS%2013.2.png)
 
 
 
