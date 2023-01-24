@@ -25,17 +25,27 @@
 
 ### Tested with: 
 
-- ### macOS Catalina v10.15 (since initial release)
-
-- ### macOS Big Sur v11 (since v2.0)
-
-- ### macOS Monterey v12 (since v3.0) 
-
 - ### macOS Ventura v13 (since v4.0)
 
 ![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%202023-01%20macOS%2013.2.png)
 
+- ### macOS Monterey v12 (since v3.0) 
 
+  ![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%202022-07%20macOS%2012.5.png)
+
+  
+
+- ### macOS Big Sur v11 (since v2.0)
+
+  ![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%202021-07%20macOS%2011.6.png)
+
+  
+
+- ### macOS Catalina v10.15 (since initial release)
+
+  
+
+  
 
 ## INSTALLATION
 
