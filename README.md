@@ -43,7 +43,7 @@
 
 - ### macOS Catalina v10.15 (since initial release)
 
-  ![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/2020-07%20maxOS%2010.15.6.png)
+  ![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/2020-07%20macOS%2010.15.6.png)
 
   
 
