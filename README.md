@@ -59,6 +59,10 @@ Tested with RTX 2060 and GTX 1660 Ti versions, both [share same hardware specs](
 
 Updating BIOS will reset CFG-Lock and Undervolting to factory settings, after update you must follow the steps to disable CFG-Lock and enable Undervolting again.
 
+### MEMORY UPGRADE
+
+- This build is working with 32gb upgrade, tested with Crucial 2x16gb DDR4 2666mhz modules. Thanks to **[nerijunior](https://github.com/nerijunior)**! View **[original thread](https://github.com/leocg/Hackintosh-Dell-G5-5590/issues/30)**
+
 #### Read [official guide](https://dortania.github.io/OpenCore-Install-Guide/) to understand stuff, not needed, but it's nice to understand what you're doing
 
 #### BIOS SETUP:
