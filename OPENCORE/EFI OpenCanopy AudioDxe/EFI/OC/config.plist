@@ -1685,6 +1685,8 @@
 			<integer>-1</integer>
 			<key>RequestBootVarRouting</key>
 			<true/>
+			<key>ResizeUsePciRbIo</key>
+			<false/>
 			<key>TscSyncTimeout</key>
 			<integer>0</integer>
 			<key>UnblockFsConnect</key>
