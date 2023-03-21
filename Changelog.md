@@ -2,6 +2,10 @@
 
 
 
+**MARCH 21 2023** (v4.3)
+
+- Updated to OpenCore 0.9.0 and corresponding kexts.
+
 **FEBRUARY 15 2023** (v4.2)
 
 - Updated to OpenCore 0.8.9 and corresponding kexts.
