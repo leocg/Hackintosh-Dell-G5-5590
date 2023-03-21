@@ -265,7 +265,7 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 **MARCH 21 2023** (v4.3)
 
-- Updated to OpenCore 0.9.0 and corresponding kexts.
+- Updated to OpenCore 0.9.0 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2023/03/07/acidanthera-march.html).
 
 **FEBRUARY 15 2023** (v4.2)
 
