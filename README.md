@@ -27,7 +27,13 @@
 
 - ### macOS Ventura v13 (since v4.0)
 
-![](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%202023-01%20macOS%2013.2.png)
+GeekBench 6 - macOS Ventura 13.2.1
+
+![GeekBench 6 - macOS Ventura 13.2.1](https://raw.githubusercontent.com/leocg/Hackintosh-Dell-G5-5590/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%206%202023-03%20macOS%2013.2.1.png)
+
+GeekBench 5 - macOS Ventura 13.2
+
+![GeekBench 5 - macOS Ventura 13.2](https://github.com/leocg/Hackintosh-Dell-G5-5590/raw/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%202023-01%20macOS%2013.2.png)
 
 - ### macOS Monterey v12 (since v3.0) 
 
