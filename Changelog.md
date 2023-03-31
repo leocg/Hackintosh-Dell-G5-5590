@@ -2,6 +2,10 @@
 
 
 
+**MARCH 31 2023** (v4.3)
+
+- Updated to macOS Ventura 13.3 using software updater without issues with OpenCore 0.9.0.
+
 **MARCH 21 2023** (v4.3)
 
 - Updated to OpenCore 0.9.0 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2023/03/07/acidanthera-march.html).
