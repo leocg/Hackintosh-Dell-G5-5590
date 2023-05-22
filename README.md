@@ -269,6 +269,12 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 
 
+**MAY 22 2023** (v4.4)
+
+- Updated to OpenCore 0.9.2 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2023/05/10/acidanthera-may.html).
+- Updated to macOS Ventura 13.4 using software updater without issues with OpenCore 0.9.2.
+- Added 4k display compatibility (still can't get more than 30hz @ 4k. Not sure if it's a hardware cap or soft cap. Bought an USB-C 4k 60hz adapter from UGREEN but it didn't work. Also didn't work on Windows. I can get 4k 60hz on windows using HDMI port attatched to RTX 2060).
+
 **MARCH 31 2023** (v4.3)
 
 - Updated to macOS Ventura 13.3 using software updater without issues with OpenCore 0.9.0.
@@ -276,11 +282,6 @@ If you like this guide and want to help with any value, please buy me a coffee :
 **MARCH 21 2023** (v4.3)
 
 - Updated to OpenCore 0.9.0 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2023/03/07/acidanthera-march.html).
-
-**FEBRUARY 15 2023** (v4.2)
-
-- Updated to OpenCore 0.8.9 and corresponding kexts.
-- Updated to macOS Ventura 13.2.1 using software updater without issues with OpenCore 0.8.8.
 
 **View past updates on [Changelog.md](https://github.com/leocg/Hackintosh-Dell-G5-5590/blob/master/Changelog.md)**
 
