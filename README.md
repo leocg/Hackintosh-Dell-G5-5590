@@ -267,7 +267,10 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 ## CHANGELOG
 
+**JUNE 13 2023** (v4.5)
 
+- Updated to OpenCore 0.9.3 and corresponding kexts
+- Fixed duplicated files in EFI folder
 
 **MAY 22 2023** (v4.4)
 
@@ -278,10 +281,6 @@ If you like this guide and want to help with any value, please buy me a coffee :
 **MARCH 31 2023** (v4.3)
 
 - Updated to macOS Ventura 13.3 using software updater without issues with OpenCore 0.9.0.
-
-**MARCH 21 2023** (v4.3)
-
-- Updated to OpenCore 0.9.0 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2023/03/07/acidanthera-march.html).
 
 **View past updates on [Changelog.md](https://github.com/leocg/Hackintosh-Dell-G5-5590/blob/master/Changelog.md)**
 

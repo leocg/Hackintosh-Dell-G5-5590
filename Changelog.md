@@ -2,6 +2,11 @@
 
 
 
+**JUNE 13 2023** (v4.5)
+
+- Updated to OpenCore 0.9.3 and corresponding kexts
+- Fixed duplicated files in EFI folder
+
 **MAY 22 2023** (v4.4)
 
 - Updated to OpenCore 0.9.2 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2023/05/10/acidanthera-may.html).

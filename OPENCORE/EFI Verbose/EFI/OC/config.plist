@@ -1528,18 +1528,6 @@
 				<string></string>
 			</dict>
 			<dict>
-				<key>Enabled</key>
-				<true/>
-				<key>LoadEarly</key>
-				<false/>
-				<key>Comment</key>
-				<string></string>
-				<key>Path</key>
-				<string>OpenCanopy.efi</string>
-				<key>Arguments</key>
-				<string></string>
-			</dict>
-			<dict>
 				<key>Comment</key>
 				<string></string>
 				<key>Path</key>
@@ -1589,6 +1577,8 @@
 			<false/>
 			<key>ClearScreenOnModeSwitch</key>
 			<false/>
+			<key>ConsoleFont</key>
+			<string></string>
 			<key>ConsoleMode</key>
 			<string></string>
 			<key>DirectGopRendering</key>
@@ -1655,6 +1645,8 @@
 			<key>HashServices</key>
 			<false/>
 			<key>OSInfo</key>
+			<false/>
+			<key>PciIo</key>
 			<false/>
 			<key>UnicodeCollation</key>
 			<false/>
