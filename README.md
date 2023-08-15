@@ -267,6 +267,10 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 ## CHANGELOG
 
+**August 15 2023** (v4.6)
+
+- Updated to OpenCore 0.9.4 and corresponding kexts
+
 **JUNE 28 2023** (v4.5.1)
 
 - Fixed LCD backlight issue
@@ -281,10 +285,6 @@ If you like this guide and want to help with any value, please buy me a coffee :
 - Updated to OpenCore 0.9.2 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2023/05/10/acidanthera-may.html).
 - Updated to macOS Ventura 13.4 using software updater without issues with OpenCore 0.9.2.
 - Added 4k display compatibility (still can't get more than 30hz @ 4k. Not sure if it's a hardware cap or soft cap. Bought an USB-C 4k 60hz adapter from UGREEN but it didn't work. Also didn't work on Windows. I can get 4k 60hz on windows using HDMI port attatched to RTX 2060).
-
-**MARCH 31 2023** (v4.3)
-
-- Updated to macOS Ventura 13.3 using software updater without issues with OpenCore 0.9.0.
 
 **View past updates on [Changelog.md](https://github.com/leocg/Hackintosh-Dell-G5-5590/blob/master/Changelog.md)**
 

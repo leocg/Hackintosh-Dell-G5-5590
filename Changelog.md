@@ -2,6 +2,10 @@
 
 
 
+**August 15 2023** (v4.6)
+
+- Updated to OpenCore 0.9.4 and corresponding kexts
+
 **JUNE 28 2023** (v4.5.1)
 
 - Fixed LCD backlight issue
