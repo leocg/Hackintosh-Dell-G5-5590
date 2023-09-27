@@ -27,6 +27,8 @@
 
 - ### macOS Sonoma v14 (since v5.0)*
 
+![](https://raw.githubusercontent.com/leocg/Hackintosh-Dell-G5-5590/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%202023-09%20macOS%2014.png)
+
 *macOS Sonoma removed all kexts related to Broadcom Wifi. If you are using a third party card (like Fenvi), you'll need to disable SIP an re-enable wifi card as described in [this article](https://github.com/5T33Z0/OC-Little-Translated/blob/main/14_OCLP_Wintel/WIiFi_Sonoma.md). A new - POST INSTALL - EFI is avaliable in order to activate wifi. **[Instructions avaliable below](#updating-to-sonoma)**.
 
 - ### macOS Ventura v13 (since v4.0)
@@ -196,13 +198,14 @@ If you are running a Broadcom (Eg. Fenvi) card, you'll need to run extra steps:
 **WARNING: disabling SIP (System Integrity Protection) is mandatory for now.**
 
 1. Update to Sonoma using software updater
-2. After booting in Sonoma, download the Post Install Wifi Enabler EFI and restart machine using this new EFI (the modified version includes new kexts in order to load broadcom driver, disable AMFI, disable System Integrity Protection and disable SecureBoot)
-3. Download the nightly build of OpenCore Legacy Patcher avaliable on Releases page
+2. After booting in Sonoma, download the Post Install Wifi Enabler EFI from [Releases page](https://github.com/leocg/Hackintosh-Dell-G5-5590/releases/) and restart machine using this new EFI (the modified version includes new kexts in order to load broadcom driver, disable AMFI, disable System Integrity Protection and disable SecureBoot)
+3. Download the nightly build of OpenCore Legacy Patcher avaliable on [Releases page](https://github.com/leocg/Hackintosh-Dell-G5-5590/releases/)
 4. Run OpenCore Legacy Patcher and click on Ignore update
 5. Click on Post-Install Root Patch and click on Start Root Patching. Put your password in order to open in root mode and restart when asked
-6. Wifi, continuity and AirDrop is reenabled.
+6. Wifi, continuity and AirDrop is reenabled. 
+7. Edit your config.plist and change `Misc -> Security -> SecureBootModel` to `Default` and restart to apply changes.
 
-To undo the process above and enable SIP again, run OpenCore Legacy Patcher, click in Post-Install Root Patch and click on Revert Root Patches. Restart and put the original OpenCore 0.9.5 EFI.
+To undo the process above and enable SIP again, Edit your config.plist and change `Misc -> Security -> SecureBootModel` to `Disabled` and restart computer. Run OpenCore Legacy Patcher, click in Post-Install Root Patch and click on Revert Root Patches. Restart and put the original OpenCore 0.9.5 EFI.
 
 Some drivers could stop working after disabling SIP. I can't run Instantview in order to run a second external monitor using the modified EFI.
 

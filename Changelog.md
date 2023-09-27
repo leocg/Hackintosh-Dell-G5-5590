@@ -6,7 +6,7 @@
 
 - Updated to OpenCore 0.9.5 and corresponding kexts, compatible with macOS Sonoma
 - Updated to macOS Sonoma using software updater without issues with OpenCore 0.9.5
-- Updating to Sonoma will break wifi if you are using Broadcom chipset. Read additional instructions to activate wifi using Broadcom chipset (Fenvi cards) [here](#updating-to-sonoma).
+- Updating to Sonoma will break wifi if you are using Broadcom chipset. Read additional instructions to activate wifi using Broadcom chipset (Fenvi cards) [here](https://github.com/leocg/Hackintosh-Dell-G5-5590/#updating-to-sonoma).
 
 **AUGUST 15 2023** (v4.6)
 
