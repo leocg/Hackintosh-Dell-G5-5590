@@ -27,7 +27,7 @@
 
 - ### macOS Sonoma v14 (since v5.0)*
 
-![](https://raw.githubusercontent.com/leocg/Hackintosh-Dell-G5-5590/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%202023-09%20macOS%2014.png)
+![](https://github.com/leocg/Hackintosh-Dell-G5-5590/blob/master/UTIL/SCREENSHOTS%20PROOFS/Geekbench%202023-09%20macOS%2014%20Sonoma.png?raw=true)
 
 *macOS Sonoma removed all kexts related to Broadcom Wifi. If you are using a third party card (like Fenvi), you'll need to disable SIP an re-enable wifi card as described in [this article](https://github.com/5T33Z0/OC-Little-Translated/blob/main/14_OCLP_Wintel/WIiFi_Sonoma.md). A new - POST INSTALL - EFI is avaliable in order to activate wifi. **[Instructions avaliable below](#updating-to-sonoma)**.
 
