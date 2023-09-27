@@ -2,7 +2,13 @@
 
 
 
-**August 15 2023** (v4.6)
+**SEPTEMBER 27 2023** (v5.0)
+
+- Updated to OpenCore 0.9.5 and corresponding kexts, compatible with macOS Sonoma
+- Updated to macOS Sonoma using software updater without issues with OpenCore 0.9.5
+- Updating to Sonoma will break wifi if you are using Broadcom chipset. Read additional instructions to activate wifi using Broadcom chipset (Fenvi cards) [here](#updating-to-sonoma).
+
+**AUGUST 15 2023** (v4.6)
 
 - Updated to OpenCore 0.9.4 and corresponding kexts
 

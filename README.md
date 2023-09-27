@@ -18,12 +18,16 @@
 
 | Extra Hardware    | Description                                                  |
 | ----------------- | ------------------------------------------------------------ |
-| SSD in second bay | 1tb SSD (Crucial BX500)                                      |
-| Wifi/Bluetooth    | Fenvi BCM94360NG (ordered m2 card at aliexpress from Fenvi Store) |
+| SSD in second bay | 1tb SSD (Crucial MX500)                                      |
+| Wifi/Bluetooth    | Fenvi BCM94360NG (ordered m2 card at aliexpress from Fenvi Store) - Need to disable Sistem Integrity Protection to run with macOS Sonoma (**[Instructions avaliable below](#updating-to-sonoma)**) |
 
 
 
 ### Tested with: 
+
+- ### macOS Sonoma v14 (since v5.0)*
+
+*macOS Sonoma removed all kexts related to Broadcom Wifi. If you are using a third party card (like Fenvi), you'll need to disable SIP an re-enable wifi card as described in [this article](https://github.com/5T33Z0/OC-Little-Translated/blob/main/14_OCLP_Wintel/WIiFi_Sonoma.md). A new - POST INSTALL - EFI is avaliable in order to activate wifi. **[Instructions avaliable below](#updating-to-sonoma)**.
 
 - ### macOS Ventura v13 (since v4.0)
 
@@ -181,6 +185,29 @@ If you didn't disable CFG LOCK, change the values below (**don't need to change 
 
 
 
+## #UPDATING TO SONOMA
+
+Update to sonoma is easy, just run software updater using OpenCore 0.9.5 or above.
+
+### Enabling Broadcom Wifi with Sonoma
+
+If you are running a Broadcom (Eg. Fenvi) card, you'll need to run extra steps:
+
+**WARNING: disabling SIP (System Integrity Protection) is mandatory for now.**
+
+1. Update to Sonoma using software updater
+2. After booting in Sonoma, download the Post Install Wifi Enabler EFI and restart machine using this new EFI (the modified version includes new kexts in order to load broadcom driver, disable AMFI, disable System Integrity Protection and disable SecureBoot)
+3. Download the nightly build of OpenCore Legacy Patcher avaliable on Releases page
+4. Run OpenCore Legacy Patcher and click on Ignore update
+5. Click on Post-Install Root Patch and click on Start Root Patching. Put your password in order to open in root mode and restart when asked
+6. Wifi, continuity and AirDrop is reenabled.
+
+To undo the process above and enable SIP again, run OpenCore Legacy Patcher, click in Post-Install Root Patch and click on Revert Root Patches. Restart and put the original OpenCore 0.9.5 EFI.
+
+Some drivers could stop working after disabling SIP. I can't run Instantview in order to run a second external monitor using the modified EFI.
+
+
+
 ## KNOWN ISSUES
 
 - Some DRM videos won't work. Currently you can view videos encoded with **FairPlay 2.x/3.x**.
@@ -267,7 +294,13 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 ## CHANGELOG
 
-**August 15 2023** (v4.6)
+**SEPTEMBER 27 2023** (v5.0)
+
+- Updated to OpenCore 0.9.5 and corresponding kexts, compatible with macOS Sonoma
+- Updated to macOS Sonoma using software updater without issues with OpenCore 0.9.5
+- Updating to Sonoma will break wifi if you are using Broadcom chipset. Read additional instructions to activate wifi using Broadcom chipset (Fenvi cards) [here](#updating-to-sonoma).
+
+**AUGUST 15 2023** (v4.6)
 
 - Updated to OpenCore 0.9.4 and corresponding kexts
 
@@ -279,12 +312,6 @@ If you like this guide and want to help with any value, please buy me a coffee :
 
 - Updated to OpenCore 0.9.3 and corresponding kexts
 - Fixed duplicated files in EFI folder
-
-**MAY 22 2023** (v4.4)
-
-- Updated to OpenCore 0.9.2 and corresponding kexts (https://dortania.github.io/hackintosh/updates/2023/05/10/acidanthera-may.html).
-- Updated to macOS Ventura 13.4 using software updater without issues with OpenCore 0.9.2.
-- Added 4k display compatibility (still can't get more than 30hz @ 4k. Not sure if it's a hardware cap or soft cap. Bought an USB-C 4k 60hz adapter from UGREEN but it didn't work. Also didn't work on Windows. I can get 4k 60hz on windows using HDMI port attatched to RTX 2060).
 
 **View past updates on [Changelog.md](https://github.com/leocg/Hackintosh-Dell-G5-5590/blob/master/Changelog.md)**
 
