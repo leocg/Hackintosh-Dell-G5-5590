@@ -199,7 +199,7 @@ If you are running a Broadcom (Eg. Fenvi) card, you'll need to run extra steps:
 
 1. Update to Sonoma using software updater
 2. After booting in Sonoma, download the Post Install Wifi Enabler EFI from [Releases page](https://github.com/leocg/Hackintosh-Dell-G5-5590/releases/) and restart machine using this new EFI (the modified version includes new kexts in order to load broadcom driver, disable AMFI, disable System Integrity Protection and disable SecureBoot)
-3. Download the nightly build of OpenCore Legacy Patcher avaliable on [Nightly.link: OpenCore-Patcher.app - Sonoma Development](https://nightly.link/dortania/OpenCore-Legacy-Patcher/workflows/build-app-wxpython/sonoma-development/OpenCore-Patcher.app (GUI).zip)
+3. Download the nightly build of OpenCore Legacy Patcher avaliable on [Nightly.link: OpenCore-Patcher.app (Sonoma Development)](https://nightly.link/dortania/OpenCore-Legacy-Patcher/workflows/build-app-wxpython/sonoma-development/OpenCore-Patcher.app%20%28GUI%29.zip)
 4. Run OpenCore Legacy Patcher
 5. Click on Post-Install Root Patch and click on Start Root Patching. Put your password in order to open in root mode and restart when asked. - If you can't apply root patches with OpenCore Legacy Patcher, add `amfi=0x80` to `NVRAM -> Add -> 7C436110-AB2A-4BBB-A880-FE41995C9F82 -> boot-args` and reboot. Remove this boot arg after installing root patches and rebooting.
 6. Wifi, continuity and AirDrop is reenabled. 
