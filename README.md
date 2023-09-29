@@ -189,7 +189,7 @@ If you didn't disable CFG LOCK, change the values below (**don't need to change 
 
 ## #UPDATING TO SONOMA
 
-Update to sonoma is easy, just run software updater using OpenCore 0.9.5 or above.
+Update to sonoma is easy, just run software updater using OpenCore 0.9.5 or above. In case you get an error downloading update from macOS Software Updater, download [InstallAssistant.pkg](https://swcdn.apple.com/content/downloads/26/09/042-58988-A_114Q05ZS90/yudaal746aeavnzu5qdhk26uhlphm3r79u/InstallAssistant.pkg) from Apple Server, run it and double click on Install macOS Sonoma.app created on Applications folder.
 
 ### Enabling Broadcom Wifi with Sonoma
 
