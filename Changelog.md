@@ -2,6 +2,11 @@
 
 
 
+**SEPTEMBER 29 2023** (v5.0.1)
+
+- Fixed AMFI issues. It's possible to boot without `amfi=0x80` boot arg
+- **If you installed latest release, use OpenCore Legacy Patcher to revert changes before using new EFI or system won't boot!**
+
 **SEPTEMBER 27 2023** (v5.0)
 
 - Updated to OpenCore 0.9.5 and corresponding kexts, compatible with macOS Sonoma
